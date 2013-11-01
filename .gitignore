@@ -91,6 +91,7 @@ dwsync.xml
 
 # Folders to ignore #
 ############################
+LESS_CACHE/
 .hg
 .svn
 .CVS

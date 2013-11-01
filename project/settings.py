@@ -94,7 +94,8 @@ GRAPPELLI_INDEX_DASHBOARD = 'turismo.dashboard.CustomIndexDashboard'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # other finders..
+    'less.finders.LessFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -132,6 +133,7 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = [
     # my apps
     'core',
+    'less',
 
     # third apps
     'south',
