@@ -20,6 +20,10 @@ urlpatterns = patterns(
 
     # Uncomment the next line to enable the admin:
     url(r'^$', include('core.urls', namespace="core")),
+
+    url(r'^ckeditor/', include('ckeditor.urls')),
+    url(r'^grappelli/', include('grappelli.urls')),
+
     url(r'^admin/', include(admin.site.urls)),
 )
 

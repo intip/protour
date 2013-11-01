@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
+import sys, os
 
 from unipath import Path
-PROJECT_DIR = Path(__file__).ancestor(3)
+PROJECT_DIR = Path(__file__).ancestor(2)
 
 # Django settings for the project.
+
+sys.path.append(os.path.join(PROJECT_DIR, "business/apps/"))
+
+from turismo.settings import *
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -25,8 +30,9 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
 LANGUAGES = (
-    ('pt-br', u'Portugues'),
+    ('pt-br', u'Português'),
     ('en', u'Ingles'),
 )
 
@@ -80,6 +86,9 @@ STATICFILES_DIRS = (
     PROJECT_DIR.child("assets"),
 )
 
+GRAPPELLI_ADMIN_TITLE = u"PORTAL BONITOWAY"
+GRAPPELLI_INDEX_DASHBOARD = 'turismo.dashboard.CustomIndexDashboard'
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
@@ -91,22 +100,22 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '4zi#*lgzxm2_rbqq*90drf#as+1laewp)i^4-z@z68#k0fh#w('
 
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
-)
+# # List of callables that know how to import templates from various sources.
+# TEMPLATE_LOADERS = (
+#     'django.template.loaders.filesystem.Loader',
+#     'django.template.loaders.app_directories.Loader',
+# #     'django.template.loaders.eggs.Loader',
+# )
 
-MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+# MIDDLEWARE_CLASSES = (
+#     'django.middleware.common.CommonMiddleware',
+#     'django.contrib.sessions.middleware.SessionMiddleware',
+#     'django.middleware.csrf.CsrfViewMiddleware',
+#     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#     'django.contrib.messages.middleware.MessageMiddleware',
+#     # Uncomment the next line for simple clickjacking protection:
+#     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+# )
 
 ROOT_URLCONF = 'project.urls'
 
@@ -120,26 +129,13 @@ TEMPLATE_DIRS = (
     PROJECT_DIR.child("templates"),
 )
 
-INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
-
+INSTALLED_APPS = [
     # my apps
     'core',
 
     # third apps
     'south',
-    'django_extensions',
-    'django.contrib.admin',
-)
+] + INSTALLED_APPS
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

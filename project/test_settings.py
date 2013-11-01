@@ -1,16 +1,9 @@
-# coding: utf-8
-DEBUG = True
-
-MEDIA_ROOT = 'media/'
-
-from unipath import Path
-
-PROJECT_DIR = Path(__file__).parent
+from settings import *
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'portalturismo',
+        'NAME': 'test_portalturismo',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',

@@ -30,14 +30,14 @@ class ModelNameTests(TestCase):
     """
     """
 
-    def test_genre_creation_mommy(self):
-        # o que eu quero criar
-        what = mommy.make(Model)
-        self.assertTrue(isinstance(what, Genre))
+    # def test_genre_creation_mommy(self):
+    #     # o que eu quero criar
+    #     what = mommy.make(Model)
+    #     self.assertTrue(isinstance(what, Genre))
 
-    def test_genre_return__unicode_title_mommy(self):
-        # o que eu quero criar
-        what = mommy.make(Model)
-        self.assertEqual(what.__unicode__(), what.title)
+    # def test_genre_return__unicode_title_mommy(self):
+    #     # o que eu quero criar
+    #     what = mommy.make(Model)
+    #     self.assertEqual(what.__unicode__(), what.title)
 
 

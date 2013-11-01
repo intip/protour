@@ -1,13 +1,24 @@
 # -*- coding:utf-8 -*-
 
-######### WHAT WE NEED TEST #########
-#
-# 1 - viewing of data / visualizacao de dados
-# 2 - changing of data / mudanca de dados
-# 3 - custom class-based-views methods / metodos customizados
+from django.core.urlresolvers import reverse as r
+from django.test import TestCase
 
-############# TIPS ##################
-#
-# 1 - Cada função de test deve haver apenas 1 assert
-#
-#####################################
+
+class HomePageTest(TestCase):
+    """
+    Tests the homepage views
+    """
+    def setUp(self):
+        self.resp = self.client.get(r('core:homepage'))
+
+    def test_http_status(self):
+        """
+        Homepage http status should be 200.
+        """
+        self.assertEqual(200, self.resp.status_code)
+
+    def test_homepage_template(self):
+        """
+        Homepage shoud use the 'index.html' template.
+        """
+        self.assertTemplateUsed(self.resp, "index.html")
