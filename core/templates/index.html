@@ -6,17 +6,27 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Passeio Urbano</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
     <link type="text/css" rel="stylesheet" href="{{ STATIC_URL}}{% less 'less/bootstrap.less' %}" />
 
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <style>
+    /*ME REMOVA LOGO!!!!@*/
+    #fb-root {
+        display: none;
+    }
+
+    /* To fill the container and nothing else */
+
+    .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+        width: 100% !important;
+    }
+    </style>
+    <script src="{{ STATIC_URL}}js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -24,12 +34,92 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <div class="container top">
+      <div class="row">
+        <div class="col-md-4">
+          <h1>Passeio Urbano</h1>
+        </div>
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-9">
+              <p>Para realizar reservas com mais rapidez, <a href="/login/">faça login</a> ou <a href="/cadastro/">cadastre-se</a></p>
+            </div>
+            <div class="col-md-3">
+              <button>Atendimento Online</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <input type="text">
+            </div>
+            <div class="col-md-4">
+              <button>Carrinho</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Pacotes Nacionais</a></li>
+              <li><a href="#">Pacotes Internacionais</a></li>
+              <li><a href="#">Passeios</a></li>
+            </ul>
+          </div>
+
+        </nav>
+      </div>
+    </div>
+    <div class="container mid">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-12">
+              {% include 'includes/pacote.html' %}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              {% include 'includes/pacote.html' %}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              {% include 'includes/pacote.html' %}
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="fb-like-box" data-href="http://www.facebook.com/FacebookDevelopers" data-width="100%" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container bot">
+      <div class="row">
+        <div class="col-md-4">
+          teste
+        </div>
+        <div class="col-md-8">
+          teste
+        </div>
+      </div>
+    </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{ STATIC_URL}}js/plugins.js"></script>
+    <script src="{{ STATIC_URL}}js/main.js"></script>
+    <script src="{{ STATIC_URL}}js/collapse.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -40,5 +130,13 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=147287675359347";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
   </body>
 </html>
