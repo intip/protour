@@ -13,19 +13,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <link type="text/css" rel="stylesheet" href="{{ STATIC_URL}}{% less 'less/bootstrap.less' %}" />
-
-    <style>
-    /*ME REMOVA LOGO!!!!@*/
-    #fb-root {
-        display: none;
-    }
-
-    /* To fill the container and nothing else */
-
-    .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
-        width: 100% !important;
-    }
-    </style>
+    <link type="text/css" rel="stylesheet" href="{{ STATIC_URL}}{% less 'less/main.less' %}" />
     <script src="{{ STATIC_URL}}js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
   <body>
@@ -37,7 +25,7 @@
     <div class="container top">
       <div class="row">
         <div class="col-md-4">
-          <h1>Passeio Urbano</h1>
+          <h1><img class="img-responsive" src="http://placehold.it/150x100">Passeio Urbano</h1>
         </div>
         <div class="col-md-8">
           <div class="row">
@@ -100,6 +88,7 @@
           </div>
         </div>
         <div class="col-md-3">
+          <img class="img-responsive" src="http://placehold.it/263x263">
           <div class="fb-like-box" data-href="http://www.facebook.com/FacebookDevelopers" data-width="100%" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
         </div>
       </div>
