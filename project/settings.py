@@ -135,8 +135,6 @@ INSTALLED_APPS = [
     'core',
     'less',
 
-    # third apps
-    'south',
 ] + INSTALLED_APPS
 
 # A sample logging configuration. The only tangible logging
