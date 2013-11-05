@@ -25,23 +25,23 @@
     <div class="container top">
       <div class="row">
         <div class="col-md-4">
-          <h1><img class="img-responsive" src="http://placehold.it/150x100">Passeio Urbano</h1>
+          <h1><img class="img-responsive" src="http://placehold.it/150x100"></h1>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 top-actions">
           <div class="row">
             <div class="col-md-9">
               <p>Para realizar reservas com mais rapidez, <a href="/login/">faça login</a> ou <a href="/cadastro/">cadastre-se</a></p>
             </div>
             <div class="col-md-3">
-              <button>Atendimento Online</button>
+              <button class="btn pull-right">Atendimento Online</button>
             </div>
           </div>
           <div class="row">
             <div class="col-md-8">
-              <input type="text">
+              <input type="text" class="form-control" placeholder="Para onde você deseja ir?">
             </div>
             <div class="col-md-4">
-              <button>Carrinho</button>
+              <button class="btn btn-carrinho pull-right">Carrinho</button>
             </div>
           </div>
         </div>
@@ -71,17 +71,17 @@
     <div class="container mid">
       <div class="row">
         <div class="col-md-9">
-          <div class="row">
+          <div class="row pacote-home">
             <div class="col-md-12">
               {% include 'includes/pacote.html' %}
             </div>
           </div>
-          <div class="row">
+          <div class="row pacote-home">
             <div class="col-md-12">
               {% include 'includes/pacote.html' %}
             </div>
           </div>
-          <div class="row">
+          <div class="row pacote-home">
             <div class="col-md-12">
               {% include 'includes/pacote.html' %}
             </div>
@@ -89,7 +89,7 @@
         </div>
         <div class="col-md-3">
           <img class="img-responsive" src="http://placehold.it/263x263">
-          <div class="fb-like-box" data-href="http://www.facebook.com/FacebookDevelopers" data-width="100%" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+          <div class="fb-like-box" data-href="http://www.facebook.com/FacebookDevelopers" data-width="263px" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
         </div>
       </div>
     </div>
