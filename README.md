@@ -1,5 +1,7 @@
 # ProTour
 
+[![Build Status](https://drone.io/github.com/intip/protour/status.png)](https://drone.io/github.com/intip/protour/latest)
+
 Projeto de sites simples de e-commerce de produtos turísticos.
 
 ## Gerência do projeto
