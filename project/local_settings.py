@@ -1,6 +1,8 @@
 # coding: utf-8
 DEBUG = True
 
+TEMPLATE_DEBUG = True
+
 MEDIA_ROOT = 'media/'
 
 from unipath import Path
