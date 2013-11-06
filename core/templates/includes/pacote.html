@@ -18,19 +18,23 @@
   <div class="col-md-5 detalhes">
     {% if size == "medium" %}
       <div class="row">
-        <div class="col-md-12">
-          <p class="de">De: R$ 1450</p>
-          <p class="por">Por: 10 x R$ <span class="preco">{{ numbers|random }}{{ numbers|random }}</span></p>
+        <div class="col-md-12 precos">
+          <p class="de"><em>De:</em> <del>R$ 1450</del></p>
+          <p class="por"><em>Por:</em> 10 x R$ <span class="preco">{{ numbers|random }}{{ numbers|random }}</span></p>
         </div>
       </div>
     {% else %}
       <div class="row">
         <div class="col-md-6">
-          <button class="btn btn-primary">Ver detalhes</button>
+          <a href="#" class="btn btn-primary">Ver detalhes</a>
         </div>
         <div class="col-md-6">
-          <p class="de">De: R$ 1450</p>
-          <p class="por">Por: 10 x R$ <span class="preco">{{ numbers|random }}{{ numbers|random }}</span></p>
+          <div class="row">
+            <div class="col-md-12 precos">
+              <p class="de"><em>De:</em> <del>R$ 1450</del></p>
+              <p class="por"><em>Por:</em> 10 x R$ <span class="preco">{{ numbers|random }}{{ numbers|random }}</span></p>
+            </div>
+          </div>
         </div>
       </div>
     {% endif %}
