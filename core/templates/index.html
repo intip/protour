@@ -25,7 +25,11 @@
     <div class="container top">
       <div class="row">
         <div class="col-md-4">
-          <h1><img class="img-responsive" src="http://placehold.it/150x100"></h1>
+          <h1>
+            <a href="/">
+              <img class="img-responsive" alt="Passeio Urbano" title="Passeio Urbano" src="http://placehold.it/250x100">
+            </a>
+          </h1>
         </div>
         <div class="col-md-8 top-actions">
           <div class="row">
@@ -46,7 +50,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <nav class="navbar navbar-default" role="navigation">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -66,25 +70,48 @@
           </div>
 
         </nav>
-      </div>
+      </div> -->
     </div>
     <div class="container mid">
-      <div class="row">
+      <div class="row home">
         <div class="col-md-9">
-          <div class="row pacote-home">
+          <div class="row pacote big">
             <div class="col-md-12">
               {% include 'includes/pacote.html' %}
             </div>
           </div>
-          <div class="row pacote-home">
+          <div class="row pacote big">
             <div class="col-md-12">
               {% include 'includes/pacote.html' %}
             </div>
           </div>
-          <div class="row pacote-home">
-            <div class="col-md-12">
-              {% include 'includes/pacote.html' %}
+          <div class="row pacote">
+            {% with size="medium" %}
+            <div class="col-md-6">
+              <div class="medium">
+                {% include 'includes/pacote.html' %}
+              </div>
             </div>
+            <div class="col-md-6">
+              <div class="medium">
+                {% include 'includes/pacote.html' %}
+              </div>
+            </div>
+            {% endwith %}
+          </div>
+          <div class="row pacote">
+            {% with size="medium" %}
+            <div class="col-md-6">
+              <div class="medium">
+                {% include 'includes/pacote.html' %}
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="medium">
+                {% include 'includes/pacote.html' %}
+              </div>
+            </div>
+            {% endwith %}
           </div>
         </div>
         <div class="col-md-3">
@@ -96,10 +123,31 @@
     <div class="container bot">
       <div class="row">
         <div class="col-md-4">
-          teste
+          <h3>Sobre</h3>
+          <ul>
+            <li>Lorem.</li>
+            <li>Impedit.</li>
+            <li>Magni.</li>
+            <li>Consequatur.</li>
+          </ul>
         </div>
-        <div class="col-md-8">
-          teste
+        <div class="col-md-4">
+          <h3>Sobre</h3>
+          <ul>
+            <li>Lorem.</li>
+            <li>Impedit.</li>
+            <li>Magni.</li>
+            <li>Consequatur.</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h3>Sobre</h3>
+          <ul>
+            <li>Lorem.</li>
+            <li>Impedit.</li>
+            <li>Magni.</li>
+            <li>Consequatur.</li>
+          </ul>
         </div>
       </div>
     </div>

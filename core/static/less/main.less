@@ -15,10 +15,49 @@
     margin-top: 5px
 }
 
-.pacote-home {
-    border: 1px solid #CCC;
-    padding: 10px 0;
-    margin: 0 0 10px 0;
+.home .pacote {
+    &.big, .medium {
+        border: 1px solid #CCC;
+        padding: 10px 0 0 0;
+        margin: 0 0 10px 0;
+    }
+
+    .medium {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    h3 {
+        margin-top: 10px;
+        margin-bottom: 6px
+    }
+
+    .desconto {
+        position: absolute;
+        bottom: 0;
+        right: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #fdb60e;
+        width: 72px;
+        border-radius: 100% 0 0 0;
+        padding: 14px 3px 0 0;
+        p {
+            float: right;
+            margin: 0;
+            font-style: oblique;
+            color: #FFF;
+        }
+    }
+
+    .de {
+        margin: 0;
+    }
+
+    .preco {
+        font-size: 26px;
+        font-weight: bold;
+    }
 
     .detalhes {
         padding-top: 10px;

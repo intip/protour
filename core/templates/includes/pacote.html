@@ -1,22 +1,39 @@
+{% with "0123456789" as numbers %}
 <div class="row">
   <div class="col-md-12">
-    <img class="img-responsive" src="http://placehold.it/878x300">
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-8">
-    <h3>Pacote Reveillon no Rio</h3>
-    <p>Rio de Janeiro - RJ</p>
-  </div>
-  <div class="col-md-4 detalhes">
-    <div class="row">
-      <div class="col-md-6">
-        <button class="btn btn-primary">Ver detalhes</button>
-      </div>
-      <div class="col-md-6">
-        <p>De: R$ 100</p>
-        <p>Por: R$ 423</p>
+    <div class="imagem-pacote">
+      <img class="img-responsive" src="http://lorempixel.com/878/300/city/{{ numbers|random }}">
+      <div class="desconto">
+        <p>{{ numbers|random }}{{ numbers|random }}%</p>
+        <p>OFF!!</p>
       </div>
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-7">
+    <h3><a href="">Reveillon no Rio</a></h3>
+    <p><a href="">Rio de Janeiro - RJ</a></p>
+  </div>
+  <div class="col-md-5 detalhes">
+    {% if size == "medium" %}
+      <div class="row">
+        <div class="col-md-12">
+          <p class="de">De: R$ 1450</p>
+          <p class="por">Por: 10 x R$ <span class="preco">{{ numbers|random }}{{ numbers|random }}</span></p>
+        </div>
+      </div>
+    {% else %}
+      <div class="row">
+        <div class="col-md-6">
+          <button class="btn btn-primary">Ver detalhes</button>
+        </div>
+        <div class="col-md-6">
+          <p class="de">De: R$ 1450</p>
+          <p class="por">Por: 10 x R$ <span class="preco">{{ numbers|random }}{{ numbers|random }}</span></p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endwith %}
