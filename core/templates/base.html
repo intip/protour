@@ -132,5 +132,21 @@
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=147287675359347";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+    <script type="text/javascript" src="//assets.zendesk.com/external/zenbox/v2.6/zenbox.js"></script>
+    <style type="text/css" media="screen, projection">
+      @import url(//assets.zendesk.com/external/zenbox/v2.6/zenbox.css);
+    </style>
+    <script type="text/javascript">
+      if (typeof(Zenbox) !== "undefined") {
+        Zenbox.init({
+          dropboxID:   "20262866",
+          url:         "https://intipbr.zendesk.com",
+          tabTooltip:  "Faça uma pergunta",
+          tabImageURL: "https://assets.zendesk.com/external/zenbox/images/tab_pt_questions.png",
+          tabColor:    "black",
+          tabPosition: "Left"
+        });
+      }
+    </script>
   </body>
 </html>
