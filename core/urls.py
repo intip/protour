@@ -10,4 +10,5 @@ urlpatterns = patterns(
     'core.views',
     url(r'^$', 'homepage', name='homepage'),
     url(r'^pacote/$', TemplateView.as_view(template_name="pacote_details.html")),
+    url(r'^comprar/$', TemplateView.as_view(template_name="comprar.html")),
 )

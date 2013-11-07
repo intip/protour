@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+  {% with "0123456789" as numbers %}
+  <div class="row checkout">
+    <div class="col-md-12">
+      <h1>Comprar pacote: Reveillon no Rio de Janeiro</h1>
+      <h2>Variação: Saída de Belo Horizonte (Confins), 3 noites em Copacabana.</h2>
+      <form action="">
+        <div class="row">
+          <div class="col-md-3">
+            <h3>Valor promocional:</h3>
+            <h4>R$ 1232,00</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Quantidade:</h3>
+            <div class="form-group">
+              <label for="" class="sr-only">Quantidade:</label>
+              <input type="text" name="" class="form-control" id="">
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h3>Taxas e encargos:</h3>
+            <h4>R$ 1232,00</h4>
+          </div>
+          <div class="col-md-3">
+            <h3>Valor total:</h3>
+            <h4>R$ 1232,00</h4>
+          </div>
+        </div>
+        <input type="submit" value="Pagar com Pagseguro" class="btn btn-primary">
+      </form>
+    </div>
+  </div>
+  {% endwith %}
+{% endblock %}
