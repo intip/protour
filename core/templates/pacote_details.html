@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block body %}
+  {% with "0123456789" as numbers %}
+  <div class="row detalhes-pacote">
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-12">
+          <img class="img-responsive" src="http://lorempixel.com/878/300/city/{{ numbers|random }}">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Reveillon em Copacabana para 3 pessoas</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident modi obcaecati hic iure reiciendis molestias nam illum odio in id? Soluta ullam ab aliquid vitae molestiae dignissimos dolorem voluptatibus qui.</p>
+          <p>Molestias maxime adipisci consequatur tempora a delectus reprehenderit quisquam quos libero possimus in iure iusto doloremque veniam voluptatum necessitatibus eligendi fugiat nulla voluptatem unde vitae eos impedit. Impedit aliquam sint.</p>
+          <p>Veniam sint possimus nostrum unde eius odit tempore placeat excepturi doloremque dolorum animi provident nihil consequuntur. Quam sed odio tenetur voluptates eveniet ab atque commodi fugit sunt assumenda expedita optio.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Incluso no pacote:</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <ul>
+            <li>Lorem.</li>
+            <li>Neque!</li>
+            <li>Ab.</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li>Lorem.</li>
+            <li>Eius.</li>
+            <li>Eos.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Opções para você:</h2>
+        </div>
+      </div>
+      <div class="row variacao">
+        <div class="col-md-9">
+          Saída de Belo Horizonte (Confins), 3 noites em Copacabana.
+        </div>
+        <div class="col-md-3">
+          <p>R$ 223,00</p>
+          <button class="btn btn-primary">
+            Comprar
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-9">
+          Saída de Belo Horizonte (Confins), 5 noites em Copacabana.
+        </div>
+        <div class="col-md-3">
+          <p>R$ 423,00</p>
+          <button class="btn btn-primary">
+            Comprar
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Regulamento</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ullam officiis beatae neque sequi error commodi reiciendis dignissimos minima inventore quia ratione voluptates fugiat. Alias tempore molestiae cum consequatur earum!</p>
+          <p>Laborum reiciendis nulla facilis porro delectus culpa nihil nam vitae aliquid blanditiis architecto fugiat labore deserunt similique veritatis pariatur qui voluptate molestias. Neque aperiam omnis veritatis nemo velit aut id.</p>
+          <p>Nihil pariatur harum vitae odio voluptatum non ratione sunt modi dolor quam natus nobis impedit cum hic provident reprehenderit dolores minima fugit a voluptates id velit dolorem asperiores dolore cumque?</p>
+          <p>Tempore debitis nostrum facere perspiciatis doloribus possimus consequuntur dolore minima ipsa praesentium. Sequi dicta suscipit incidunt dignissimos rerum unde praesentium quos numquam quam nostrum repudiandae pariatur nesciunt aut repellat aspernatur!</p>
+          <p>Blanditiis labore laborum ab autem earum et accusantium neque qui cumque consequatur nisi suscipit possimus id dolores dolore veniam velit facilis ipsa ratione voluptatem quae iste dignissimos ducimus maiores iure.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="well comprar">
+        <p class="de"><em>De:</em> <del>R$ 1450</del></p>
+        <p class="por"><em>Por:</em> R$ <span class="preco">{{ numbers|random }}{{ numbers|random }}</span></p>
+        <p>{{ numbers|random }}{{ numbers|random }}% OFF!!</p>
+        <p>Em até 18 vezes!</p>
+        <a href="#" class="btn btn-primary">Comprar</a>
+        <p>Compra segura</p>
+      </div>
+    </div>
+  </div>
+  {% endwith %}
+{% endblock %}
