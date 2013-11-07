@@ -12,7 +12,6 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link type="text/css" rel="stylesheet" href="{{ STATIC_URL}}{% less 'less/bootstrap.less' %}" />
     <link type="text/css" rel="stylesheet" href="{{ STATIC_URL}}{% less 'less/main.less' %}" />
     <script src="{{ STATIC_URL}}js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
@@ -37,20 +36,17 @@
               <p>Para realizar reservas com mais rapidez, <a href="/login/">faça login</a> ou <a href="/cadastro/">cadastre-se</a></p>
             </div>
             <div class="col-md-3">
-              <button class="btn pull-right">Atendimento Online</button>
+              <a href="/contato/" class="btn btn-success pull-right">Contato</a>
             </div>
           </div>
           <div class="row">
             <div class="col-md-8">
               <input type="text" class="form-control" placeholder="Para onde você deseja ir?">
             </div>
-            <div class="col-md-4">
-              <button class="btn btn-carrinho pull-right">Carrinho</button>
-            </div>
           </div>
         </div>
       </div>
-      <!-- <div class="row">
+      <div class="row">
         <nav class="navbar navbar-default" role="navigation">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -63,14 +59,17 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Pacotes Nacionais</a></li>
-              <li><a href="#">Pacotes Internacionais</a></li>
-              <li><a href="#">Passeios</a></li>
+              <li><a href="#">Internacionais</a></li>
+              <li><a href="#">Nordeste</a></li>
+              <li><a href="#">Norte</a></li>
+              <li><a href="#">Centro-oeste</a></li>
+              <li><a href="#">Sudeste</a></li>
+              <li><a href="#">Sul</a></li>
             </ul>
           </div>
 
         </nav>
-      </div> -->
+      </div>
     </div>
     <div class="container mid">
       <div class="row home">
@@ -117,6 +116,7 @@
         <div class="col-md-3">
           <img class="img-responsive" src="http://placehold.it/263x263">
           <div class="fb-like-box" data-href="http://www.facebook.com/FacebookDevelopers" data-width="263px" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+          <img class="img-responsive" src="http://placehold.it/263x263" style="margin-top:40px">
         </div>
       </div>
     </div>
