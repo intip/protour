@@ -4,6 +4,17 @@
 
 Projeto de sites simples de e-commerce de produtos turísticos.
 
+## Instalando
+
+    sudo npm install -g less
+    psql -c 'create database test_portalturismo;' -U postgres
+    pip install -r project/requirements.txt --use-mirrors
+    git submodule init
+    git submodule update
+    mkdir media
+    python manage.py syncdb
+    python manage.py migrate_business
+
 ## Gerência do projeto
 
 Acessos podem ser requisitados com o Guilherme.
