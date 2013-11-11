@@ -33,17 +33,17 @@ def pull():
 
 
 def restart():
-    sudo("supervisorctl restart portaliesb")
+    sudo("supervisorctl restart protour")
     sudo("service %s restart" % WEBSERVER)
 
 
 def start():
-    sudo("supervisorctl start portaliesb")
+    sudo("supervisorctl start protour")
     sudo("service %s restart" % WEBSERVER)
 
 
 def stop():
-    sudo("supervisorctl stop portaliesb")
+    sudo("supervisorctl stop protour")
 
 
 def collectstatic():

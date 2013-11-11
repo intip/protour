@@ -15,6 +15,8 @@ Projeto de sites simples de e-commerce de produtos turísticos.
     python manage.py syncdb
     python manage.py migrate_business
 
+O projeto requer less >= 1.4.0.
+
 ## Gerência do projeto
 
 Acessos podem ser requisitados com o Guilherme.
@@ -46,6 +48,12 @@ Compra realizada.
 ### Versão 1.0
 
 Domínio mundial.
+
+## Deploy
+
+Fabfile eestá configurado para deploy no famigerado 69:
+
+    fab deploy
 
 ## Responsáveis
 
