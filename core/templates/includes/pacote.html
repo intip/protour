@@ -13,7 +13,9 @@
 <div class="row">
   <div class="col-md-7">
     <h3><a href="/pacote/">{{ pacote.titulo }}</a></h3>
-    <p><a href="/pacote/">Rio de Janeiro - RJ</a></p>
+    {% if pacote.resumo %}
+    <p><a href="/pacote/">{{ pacote.resumo }}</a></p>
+    {% endif %}
   </div>
   <div class="col-md-5 detalhes">
     {% if size == "medium" %}
