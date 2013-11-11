@@ -12,6 +12,8 @@ class HomePageTest(TestCase):
     """
     def setUp(self):
         self.tour = mommy.make_recipe('core.city_tour_bh')
+        self.tour_unpub = mommy.make_recipe('core.city_tour_bh_despublicado')
+        self.tour_unfeat = mommy.make_recipe('core.city_tour_bh_sem_destaque')
         self.resp = self.client.get(r('core:homepage'))
 
     def test_http_status(self):
@@ -31,3 +33,17 @@ class HomePageTest(TestCase):
         Homepage should contain a 'pacote'.
         """
         self.assertIn(self.tour.titulo, self.resp.content.decode("utf8"))
+
+    def test_pacote_despublicado(self):
+        """
+        Homepage should not contain unpublished 'pacotes'.
+        """
+        self.assertNotIn(self.tour_unpub.titulo,
+                         self.resp.content.decode("utf8"))
+
+    def test_pacote_sem_destaque(self):
+        """
+        Homepage should not contain unfeatured 'pacotes'.
+        """
+        self.assertNotIn(self.tour_unfeat.titulo,
+                         self.resp.content.decode("utf8"))

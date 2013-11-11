@@ -9,5 +9,5 @@ class HomePageView(ListView):
     """
     Main page for the site.
     """
-    model = Pacote
     template_name = "index.html"
+    queryset = Pacote.objects.filter(destaque=True).filter(publicado=True)
