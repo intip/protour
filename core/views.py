@@ -1,22 +1,13 @@
 # -*- coding:utf-8 -*-
 
-# Stdlib imports
+from django.views.generic import ListView
 
-# Core Django imports
-from django.shortcuts import render_to_response
-from django.template import RequestContext
-
-# Third-party app imports
-
-# Imports from your apps
+from pacote.models import Pacote
 
 
-def homepage(request):
+class HomePageView(ListView):
     """
-    Doc string
+    Main page for the site.
     """
-
-    return render_to_response(
-        'index.html',
-        context_instance=RequestContext(request)
-    )
+    model = Pacote
+    template_name = "index.html"

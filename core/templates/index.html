@@ -2,6 +2,7 @@
 {% block body %}
 <div class="row home">
   <div class="col-md-9">
+    {% for pacote in object_list %}
     <div class="row pacote big">
       <div class="col-md-12">
         {% include 'includes/pacote.html' %}
@@ -12,6 +13,7 @@
         {% include 'includes/pacote.html' %}
       </div>
     </div>
+    {% endfor %}
     <div class="row pacote">
       {% with size="medium" %}
       <div class="col-md-6">
