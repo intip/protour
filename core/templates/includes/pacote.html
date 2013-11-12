@@ -1,13 +1,15 @@
 {% with "0123456789" as numbers %}
 <div class="row">
   <div class="col-md-12">
+    {% if pacote.imagem %}
     <div class="imagem-pacote">
-      <a href="{% url 'core:detalhes' pk=pacote.id %}"><img class="img-responsive" src="http://lorempixel.com/878/300/city/{{ numbers|random }}"></a>
+      <a href="{% url 'core:detalhes' pk=pacote.id %}"><img class="img-responsive" src="{{ pacote.imagem.url }}"></a>
       <div class="desconto">
         <p>{{ pacote.desconto }}%</p>
         <p>OFF!!</p>
       </div>
     </div>
+    {% endif %}
   </div>
 </div>
 <div class="row">
