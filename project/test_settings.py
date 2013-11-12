@@ -4,8 +4,6 @@ from settings import *
 
 os.environ['REUSE_DB'] = "1"
 
-INSTALLED_APPS.remove('south')
-
 NOSE_ARGS = ['--with-yanc', '--verbosity=2', '-x', '-d']
 
 DATABASES = {
