@@ -1,4 +1,5 @@
 #-*- coding:utf-8 -*-
+import time
 
 from django.core.urlresolvers import reverse as r
 from django.test import LiveServerTestCase
@@ -29,6 +30,7 @@ class ProtourFeatureTest(LiveServerTestCase):
         Should be able to go to the 'pacote' page by anchor clicking.
         """
         self.browser.visit(self.live_server_url + self.index_page)
+        time.sleep(3)
         self.browser.find_link_by_text(self.tour.titulo).click()
         self.assertEqual(
             self.live_server_url + self.detail_page,
@@ -44,4 +46,3 @@ class ProtourFeatureTest(LiveServerTestCase):
         self.assertEqual(
             self.tour.titulo,
             self.browser.find_by_css('h1')[0].text)
-
