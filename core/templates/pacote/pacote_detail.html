@@ -49,87 +49,65 @@
           {{ object.texto|safe }}
         </div>
       </div>
+      {% if object.incluso %}
       <div class="row">
         <div class="col-md-12">
           <h2>Incluso no pacote:</h2>
+          {{ object.incluso|safe }}
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <ul>
-            <li>Lorem.</li>
-            <li>Neque!</li>
-            <li>Ab.</li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <ul>
-            <li>Lorem.</li>
-            <li>Eius.</li>
-            <li>Eos.</li>
-          </ul>
-        </div>
-      </div>
+      {% endif %}
       <div class="row">
         <div class="col-md-12">
           <h2>Opções para você:</h2>
         </div>
       </div>
+      {% for variacao in object.get_variacoes %}
       <div class="row variacao">
         <div class="col-md-9">
-          Saída de Belo Horizonte (Confins), 3 noites em Copacabana.
+          {{ variacao.titulo }}
         </div>
+        {% for i in variacao.variacaopreco_set.all %}
         <div class="col-md-3">
-          <p>R$ 223,00</p>
-          <a href="/comprar/" class="btn btn-primary">
+          <p>R$ {{ i.preco }}</p>
+          <a href="/comprar/{{ i.pk }}" class="btn btn-primary">
             Comprar
           </a>
         </div>
+        {% endfor %}
       </div>
-      <div class="row">
-        <div class="col-md-9">
-          Saída de Belo Horizonte (Confins), 5 noites em Copacabana.
-        </div>
-        <div class="col-md-3">
-          <p>R$ 423,00</p>
-          <a href="/comprar/" class="btn btn-primary">
-            Comprar
-          </a>
-        </div>
-      </div>
+      {% endfor %}
+      {% if object.regulamento %}
       <div class="row">
         <div class="col-md-12">
           <h2>Regulamento</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ullam officiis beatae neque sequi error commodi reiciendis dignissimos minima inventore quia ratione voluptates fugiat. Alias tempore molestiae cum consequatur earum!</p>
-          <p>Laborum reiciendis nulla facilis porro delectus culpa nihil nam vitae aliquid blanditiis architecto fugiat labore deserunt similique veritatis pariatur qui voluptate molestias. Neque aperiam omnis veritatis nemo velit aut id.</p>
-          <p>Nihil pariatur harum vitae odio voluptatum non ratione sunt modi dolor quam natus nobis impedit cum hic provident reprehenderit dolores minima fugit a voluptates id velit dolorem asperiores dolore cumque?</p>
-          <p>Tempore debitis nostrum facere perspiciatis doloribus possimus consequuntur dolore minima ipsa praesentium. Sequi dicta suscipit incidunt dignissimos rerum unde praesentium quos numquam quam nostrum repudiandae pariatur nesciunt aut repellat aspernatur!</p>
-          <p>Blanditiis labore laborum ab autem earum et accusantium neque qui cumque consequatur nisi suscipit possimus id dolores dolore veniam velit facilis ipsa ratione voluptatem quae iste dignissimos ducimus maiores iure.</p>
+          {{ object.regulamento|safe }}
         </div>
       </div>
+      {% endif %}
+      {% if object.recomendacoes %}
       <div class="row">
         <div class="col-md-12">
           <h2>Recomendações</h2>
-          <ul>
-            <li>Lorem ipsum dolor sit amet, consectetur.</li>
-            <li>Omnis deserunt est nam obcaecati rem!</li>
-            <li>Ut sit velit architecto maiores maxime.</li>
-            <li>Soluta praesentium perspiciatis exercitationem commodi doloribus.</li>
-            <li>Cum sit et vitae eligendi at.</li>
-          </ul>
+          {{ object.recomendacoes|safe }}
         </div>
       </div>
+      {% endif %}
     </div>
     <div class="col-md-3">
       <div class="well comprar">
+      {% for variacao in object.get_variacoes|slice:"0:1" %}
+        {% for i in variacao.variacaopreco_set.all|slice:":1" %}
         <p class="de"><em>De:</em> <del>R$ {{ object.preco_de }}</del></p>
-        <p class="por"><em>Por:</em> R$ <span class="preco">{{ object.preco_por }}</span></p>
-        <p>{{ object.desconto }}% OFF!!</p>
+        <p class="por"><em>Por:</em> R$ <span class="preco">{{ i.preco }}</span></p>
         <p>Em até 18 vezes!</p>
-        <a href="/comprar/" class="btn btn-primary">
-            Comprar
-          </a>
+
+        <a href="/comprar/{{ i.pk }}" class="btn btn-primary">
+          Comprar
+        </a>
         <p>Compra segura</p>
+        {% endfor %}
+      {% endfor %}
       </div>
     </div>
   </div>
