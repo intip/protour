@@ -15,6 +15,8 @@ class HomePageTest(TestCase):
         self.tour_unpub = mommy.make_recipe('core.city_tour_bh_despublicado')
         self.tour_unfeat = mommy.make_recipe('core.city_tour_bh_sem_destaque')
         self.resp = self.client.get(r('core:homepage'))
+        self.detail_page = self.client.get(
+            r("core:detalhes", args=[self.tour.pk]))
 
     def test_http_status(self):
         """
@@ -51,5 +53,11 @@ class HomePageTest(TestCase):
     def test_pacote_detail(self):
         """
         """
-        detail_page = self.client.get(r("core:detalhes", args=[self.tour.pk]))
-        self.assertEqual(200, detail_page.status_code)
+        self.assertEqual(200, self.detail_page.status_code)
+
+    def test_pacote_detail_in_page(self):
+        """
+        """
+        self.assertIn(
+            self.tour.titulo,
+            self.detail_page.content.decode("utf8"))

@@ -36,7 +36,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <h1>Reveillon em Copacabana para 3 pessoas</h1>
+          <h1>{{ object.titulo }}</h1>
         </div>
       </div>
       <div class="row">
@@ -119,9 +119,9 @@
     </div>
     <div class="col-md-3">
       <div class="well comprar">
-        <p class="de"><em>De:</em> <del>R$ 1450</del></p>
-        <p class="por"><em>Por:</em> R$ <span class="preco">{{ numbers|random }}{{ numbers|random }}</span></p>
-        <p>{{ numbers|random }}{{ numbers|random }}% OFF!!</p>
+        <p class="de"><em>De:</em> <del>R$ {{ object.preco_de }}</del></p>
+        <p class="por"><em>Por:</em> R$ <span class="preco">{{ object.preco_por }}</span></p>
+        <p>{{ object.desconto }}% OFF!!</p>
         <p>Em até 18 vezes!</p>
         <a href="/comprar/" class="btn btn-primary">
             Comprar
