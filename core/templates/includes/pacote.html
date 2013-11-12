@@ -4,7 +4,7 @@
     <div class="imagem-pacote">
       <a href="/pacote/"><img class="img-responsive" src="http://lorempixel.com/878/300/city/{{ numbers|random }}"></a>
       <div class="desconto">
-        <p>{{ numbers|random }}{{ numbers|random }}%</p>
+        <p>{{ pacote.desconto }}%</p>
         <p>OFF!!</p>
       </div>
     </div>
@@ -21,8 +21,8 @@
     {% if size == "medium" %}
       <div class="row">
         <div class="col-md-12 precos">
-          <p class="de"><em>De:</em> <del>R$ 1450</del></p>
-          <p class="por"><em>Por:</em> 10 x R$ <span class="preco">{{ numbers|random }}{{ numbers|random }}</span></p>
+          <p class="de"><em>De:</em> <del>R$ {{ pacote.preco_de }}</del></p>
+          <p class="por"><em>Por:</em> R$ {{ pacote.preco_por }}</span></p>
         </div>
       </div>
     {% else %}
@@ -33,8 +33,8 @@
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-12 precos">
-              <p class="de"><em>De:</em> <del>R$ 1450</del></p>
-              <p class="por"><em>Por:</em> 10 x R$ <span class="preco">{{ numbers|random }}{{ numbers|random }}</span></p>
+              <p class="de"><em>De:</em> <del>R$ {{ pacote.preco_de }}</del></p>
+              <p class="por"><em>Por:</em> R$ {{ pacote.preco_por }}</span></p>
             </div>
           </div>
         </div>

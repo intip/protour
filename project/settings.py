@@ -166,6 +166,7 @@ LOGGING = {
     }
 }
 
+PRO_TOUR = True
 
 try:
     from local_settings import *
