@@ -52,11 +52,13 @@ class HomePageTest(TestCase):
 
     def test_pacote_detail(self):
         """
+        Pacote's detail page http status should be 200.
         """
         self.assertEqual(200, self.detail_page.status_code)
 
     def test_pacote_detail_in_page(self):
         """
+        Pacote's title should be in the details page.
         """
         self.assertIn(
             self.tour.titulo,
