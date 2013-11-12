@@ -47,3 +47,9 @@ class HomePageTest(TestCase):
         """
         self.assertNotIn(self.tour_unfeat.titulo,
                          self.resp.content.decode("utf8"))
+
+    def test_pacote_detail(self):
+        """
+        """
+        detail_page = self.client.get(r("core:detalhes", args=[self.tour.pk]))
+        self.assertEqual(200, detail_page.status_code)
