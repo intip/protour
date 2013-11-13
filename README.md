@@ -17,6 +17,14 @@ Projeto de sites simples de e-commerce de produtos turísticos.
 
 O projeto requer less >= 1.4.0.
 
+## Rodando os testes
+
+    echo 'instalando less'
+    psql -c 'create database test_portalturismo;' -U postgres
+    python manage.py syncdb --settings=project.test_settings --noinput
+    python manage.py migrate_business --settings=project.test_settings
+    bash test.sh
+
 ## Gerência do projeto
 
 Acessos podem ser requisitados com o Guilherme.
