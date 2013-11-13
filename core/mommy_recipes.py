@@ -11,6 +11,10 @@ belzonte = Recipe(
     titulo="Belo Horizonte"
 )
 
+rondonia = Recipe(
+    Destino,
+    titulo="Rondonia"
+)
 
 city_tour_bh = Recipe(
     Pacote,
@@ -32,4 +36,12 @@ city_tour_bh_sem_destaque = Recipe(
     texto="Aproveite!",
     publicado=True,
     destaque=False,
+)
+
+tour_rondonia = Recipe(
+    Pacote,
+    texto="Aproveite!",
+    publicado=True,
+    destaque=True,
+    destino=foreign_key(rondonia)
 )
