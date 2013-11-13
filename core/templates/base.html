@@ -23,11 +23,13 @@
     <!-- Add your site or application content here -->
     <div class="container top">
       <div class="row">
+        {% if empresa.logo %}
         <div class="col-md-4">
           <a href="/">
             <img class="img-responsive" alt="Passeio Urbano" title="Passeio Urbano" src="{{ empresa.logo.url }}">
           </a>
         </div>
+        {% endif %}
         <div class="col-md-8 top-actions">
           <div class="row">
             <div class="col-md-12">
