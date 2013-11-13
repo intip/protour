@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
+{% block title %}
+  {% if destino %}
+    {{ empresa.nome }} - Pacotes em {{ destino.titulo }}
+  {% else %}
+    {{ empresa.nome }}
+  {% endif %}
+{% endblock %}
 {% block body %}
 <div class="row home">
   <div class="col-md-9">
+    {% if destino %}
+    <h1>Pacotes em {{ destino.titulo }}</h1>
+    {% endif %}
     {% for pacote in object_list %}
     <div class="row pacote big">
       <div class="col-md-12">

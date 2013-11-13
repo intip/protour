@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Passeio Urbano</title>
+    <title>{% block title %}{{ empresa.nome }}{% endblock %}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -26,7 +26,7 @@
         {% if empresa.logo %}
         <div class="col-md-4">
           <a href="/">
-            <img class="img-responsive" alt="Passeio Urbano" title="Passeio Urbano" src="{{ empresa.logo.url }}">
+            <img class="img-responsive" alt="{{ empresa.nome }}" title="{{ empresa.nome }}" src="{{ empresa.logo.url }}">
           </a>
         </div>
         {% endif %}
@@ -57,7 +57,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               {% for destino in destinos %}
-              <li><a href="/destino/{{ destino.slug }}">{{ destino.titulo }}</a></li>
+              <li><a href="{% url 'core:destino' slug=destino.slug %}">{{ destino.titulo }}</a></li>
               {% endfor %}
             </ul>
           </div>

@@ -25,7 +25,12 @@ class DestinoView(ListView):
 
     def get_queryset(self):
         slug = self.kwargs["slug"]
-        destino = get_object_or_404(Destino, slug=slug)
-        qs = Pacote.objects.filter(publicado=True).filter(destino=destino)
+        self.destino = get_object_or_404(Destino, slug=slug)
+        qs = Pacote.objects.filter(publicado=True).filter(destino=self.destino)
         qs = qs.order_by("data_publicacao")
         return qs
+
+    def get_context_data(self, **kwargs):
+        context = super(DestinoView, self).get_context_data(**kwargs)
+        context["destino"] = self.destino
+        return context
