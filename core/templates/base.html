@@ -38,7 +38,7 @@
           </div>
           <div class="row">
             <div class="col-md-8">
-              <input type="text" class="form-control" placeholder="Para onde você deseja ir?">
+              <input type="text" class="pacote-search" placeholder="Para onde você deseja ir?">
             </div>
           </div>
         </div>
@@ -104,10 +104,25 @@
     </div>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-    <script src="{{ STATIC_URL}}js/plugins.js"></script>
+
     <script src="{{ STATIC_URL}}js/main.js"></script>
+    <script src="{{ STATIC_URL}}js/hogan-2.0.0.js"></script>
     <script src="{{ STATIC_URL}}js/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL}}js/handlebars.js"></script>
+    <script src="{{ STATIC_URL}}js/typeahead.min.js"></script>
+
+    <script type="text/javascript">
+    'use strict'
+    $('input.pacote-search').typeahead({
+      name: 'pacotes',
+      // valueKey: 'name',
+      prefetch: {url:'/pacotes.json', ttl:0},
+      {% verbatim %}
+      template: '<p><a href="{{url}}">{{value}}</a></p>',
+      {% endverbatim %}
+      engine: Hogan
+    });
+    </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

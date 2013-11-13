@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
 
+import json
+
 from django.core.urlresolvers import reverse as r
 from django.test import TestCase
 
@@ -120,3 +122,31 @@ class GlobalViewsTest(TestCase):
         Pacote's destino should be in the context
         """
         self.assertIn(self.tour.destino, self.resp.context["destinos"])
+
+
+class TypeAheadJSONViewTest(TestCase):
+    """
+    Tests the generated JSON for TypeAhead.
+    """
+    def setUp(self):
+        self.tour = mommy.make_recipe('core.city_tour_bh')
+        self.resp = self.client.get(r('core:typejson'))
+
+    def test_typeahead_json_status(self):
+        """
+        pacote.json http code should be 200.
+        """
+        self.assertEqual(self.resp.status_code, 200)
+
+    def test_pacote_in_str(self):
+        """
+        The pacote should be in the response.
+        """
+        self.assertIn(self.tour.titulo, self.resp.content.decode('utf8'))
+
+    def test_pacote_in_json(self):
+        """
+        The pacote should be formatted in the JSON.
+        """
+        pacotes = json.loads(self.resp.content)
+        self.assertEqual(pacotes[0]["value"], self.tour.titulo)

@@ -1,7 +1,11 @@
 # -*- coding:utf-8 -*-
 
+import json
+
+from django.core.urlresolvers import reverse as r
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView
+from django.views.generic import ListView, View
 
 from destino.models import Destino
 from pacote.models import Pacote
@@ -34,3 +38,23 @@ class DestinoView(ListView):
         context = super(DestinoView, self).get_context_data(**kwargs)
         context["destino"] = self.destino
         return context
+
+
+class TypeAheadView(View):
+    """
+    """
+    response_class = HttpResponse
+
+    def get(self, request, **response_kwargs):
+        self.queryset = Pacote.objects.filter(publicado=True)
+        pacotes = []
+        for pacote in self.queryset:
+            url = r("core:detalhes", args=[pacote.slug])
+            datum = {
+                "value": pacote.titulo,
+                "url": url,
+                "tokens": [pacote.titulo]
+            }
+            pacotes.append(datum)
+        response = json.dumps(pacotes)
+        return self.response_class(response, **response_kwargs)

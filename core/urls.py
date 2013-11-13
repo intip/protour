@@ -6,7 +6,7 @@ from django.views.generic.detail import DetailView
 
 from pacote.models import Pacote
 
-from core.views import HomePageView, DestinoView
+from core.views import HomePageView, DestinoView, TypeAheadView
 
 
 urlpatterns = patterns(
@@ -19,4 +19,7 @@ urlpatterns = patterns(
     url(r'^destino/(?P<slug>[\w_-]+)/$',
         DestinoView.as_view(),
         name='destino'),
+    url(r'^pacotes\.json$',
+        TypeAheadView.as_view(),
+        name='typejson'),
 )
