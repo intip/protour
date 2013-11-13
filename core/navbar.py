@@ -13,7 +13,7 @@ class Navbar(object):
             CLNode('cliente', 'cliente'),
         )}),
         (u'Inventários', {'nodes': (
-            CLNode('hotel', 'hotel'),
+            CLNode('pacote', 'pacote'),
         )}),
         (u'Configurações', {'nodes': (
             (u'Destinos', {
