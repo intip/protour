@@ -3,7 +3,7 @@
   <div class="col-md-12">
     {% if pacote.imagem %}
     <div class="imagem-pacote">
-      <a href="{% url 'core:detalhes' pk=pacote.id %}"><img class="img-responsive" src="{{ pacote.imagem.url }}"></a>
+      <a href="{% url 'core:detalhes' slug=pacote.slug %}"><img class="img-responsive" src="{{ pacote.imagem.url }}"></a>
       <div class="desconto">
         <p>{{ pacote.desconto }}%</p>
         <p>OFF!!</p>
@@ -14,9 +14,9 @@
 </div>
 <div class="row">
   <div class="col-md-7">
-    <h3><a href="{% url 'core:detalhes' pk=pacote.id %}">{{ pacote.titulo }}</a></h3>
+    <h3><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.titulo }}</a></h3>
     {% if pacote.resumo %}
-    <p><a href="{% url 'core:detalhes' pk=pacote.id %}">{{ pacote.resumo }}</a></p>
+    <p><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.resumo }}</a></p>
     {% endif %}
   </div>
   <div class="col-md-5 detalhes">
@@ -30,7 +30,7 @@
     {% else %}
       <div class="row">
         <div class="col-md-6">
-          <a href="{% url 'core:detalhes' pk=pacote.id %}" class="btn btn-primary">Ver detalhes</a>
+          <a href="{% url 'core:detalhes' slug=pacote.slug %}" class="btn btn-primary">Ver detalhes</a>
         </div>
         <div class="col-md-6">
           <div class="row">

@@ -23,7 +23,7 @@ class ProtourFeatureTest(LiveServerTestCase):
     def setUp(self):
         self.tour = mommy.make_recipe('core.city_tour_bh')
         self.index_page = r('core:homepage')
-        self.detail_page = r('core:detalhes', args=[self.tour.pk])
+        self.detail_page = r('core:detalhes', args=[self.tour.slug])
 
     def test_pacote_link(self):
         """

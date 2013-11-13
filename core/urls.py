@@ -15,6 +15,6 @@ urlpatterns = patterns(
     url(r'^$', HomePageView.as_view(), name='homepage'),
     url(r'^comprar/(?P<pk>\d+)/$',
         TemplateView.as_view(template_name="comprar.html")),
-    url(r'^pacote/(?P<pk>\d+)/$', DetailView.as_view(
+    url(r'^pacote/(?P<slug>\w+)/$', DetailView.as_view(
         model=Pacote), name='detalhes'),
 )

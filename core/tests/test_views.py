@@ -16,7 +16,7 @@ class HomePageTest(TestCase):
         self.tour_unfeat = mommy.make_recipe('core.city_tour_bh_sem_destaque')
         self.resp = self.client.get(r('core:homepage'))
         self.detail_page = self.client.get(
-            r("core:detalhes", args=[self.tour.pk]))
+            r("core:detalhes", args=[self.tour.slug]))
 
     def test_http_status(self):
         """
