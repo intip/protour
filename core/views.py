@@ -12,7 +12,9 @@ class HomePageView(ListView):
     Main page for the site.
     """
     template_name = "index.html"
-    queryset = Pacote.objects.filter(destaque=True).filter(publicado=True)
+    qs = Pacote.objects.filter(destaque=True).filter(publicado=True)
+    qs = qs.order_by("data_publicacao")
+    queryset = qs
 
 
 class DestinoView(ListView):
@@ -24,4 +26,6 @@ class DestinoView(ListView):
     def get_queryset(self):
         slug = self.kwargs["slug"]
         destino = get_object_or_404(Destino, slug=slug)
-        return Pacote.objects.filter(publicado=True).filter(destino=destino)
+        qs = Pacote.objects.filter(publicado=True).filter(destino=destino)
+        qs = qs.order_by("data_publicacao")
+        return qs
