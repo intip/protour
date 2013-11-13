@@ -90,8 +90,9 @@ STATICFILES_DIRS = (
     PROJECT_DIR.child("assets"),
 )
 
-GRAPPELLI_ADMIN_TITLE = u"PORTAL BONITOWAY"
-GRAPPELLI_INDEX_DASHBOARD = 'turismo.dashboard.CustomIndexDashboard'
+GRAPPELLI_ADMIN_TITLE = u"PRO TOUR"
+GRAPPELLI_INDEX_DASHBOARD = 'core.dashboard.CustomIndexDashboard'
+GRAPPELLI_NAVBAR = u'core.navbar.Navbar'
 
 # List of finder classes that know how to find static files in
 # various locations.
