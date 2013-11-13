@@ -56,12 +56,9 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li><a href="#">Internacionais</a></li>
-              <li><a href="#">Nordeste</a></li>
-              <li><a href="#">Norte</a></li>
-              <li><a href="#">Centro-oeste</a></li>
-              <li><a href="#">Sudeste</a></li>
-              <li><a href="#">Sul</a></li>
+              {% for destino in destinos %}
+              <li><a href="/destino/{{ destino.slug }}">{{ destino.titulo }}</a></li>
+              {% endfor %}
             </ul>
           </div>
 

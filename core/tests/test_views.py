@@ -63,3 +63,9 @@ class HomePageTest(TestCase):
         self.assertIn(
             self.tour.titulo,
             self.detail_page.content.decode("utf8"))
+
+    def test_destinos_in_context(self):
+        """
+        Pacote's destino should be in the context
+        """
+        self.assertIn(self.tour.destino, self.resp.context["destinos"])

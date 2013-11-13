@@ -46,3 +46,10 @@ class ProtourFeatureTest(LiveServerTestCase):
         self.assertEqual(
             self.tour.titulo,
             self.browser.find_by_css('h1')[0].text)
+
+    def test_destino_in_page(self):
+        """
+        Destino's link should be in the Homepage.
+        """
+        self.browser.visit(self.live_server_url + self.index_page)
+        assert self.browser.find_link_by_text(self.tour.destino)
