@@ -22,13 +22,14 @@ class CustomIndexDashboard(Dashboard):
             models=(
                 'pacote.models.Pacote',
                 'destino.models.Destino',
+                'fiber.models.Page'
             ),
         ))
 
         self.children.append(modules.LinkList(
             _(u'Vendas'),
             collapsible=True,
-            column=3,
+            column=2,
             children=[
                 {'title': 'Pedidos',
                  'url': reverse('admin:pedido_pedido_changelist')},
@@ -41,7 +42,7 @@ class CustomIndexDashboard(Dashboard):
         self.children.append(modules.LinkList(
             title=_(u'Configurações'),
             collapsible=True,
-            column=4,
+            column=3,
             children=[
                 {'title': "Empresa", 'url': url("empresa")},
                 {'title': "Formas de Pagamento", 'url': url("formapagamento")},
@@ -53,5 +54,5 @@ class CustomIndexDashboard(Dashboard):
             limit=10,
             collapsible=True,
             css_classes=('collapse closed grp-closed',),
-            column=4,
+            column=3,
         ))
