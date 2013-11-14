@@ -1,37 +1,83 @@
 {% extends 'base.html' %}
+{% load l10n %}
+
 {% block body %}
   {% with "0123456789" as numbers %}
-  <div class="row checkout">
-    <div class="col-md-12">
-      <h1>Comprar pacote: Reveillon no Rio de Janeiro</h1>
-      <h2>Variação: Saída de Belo Horizonte (Confins), 3 noites em Copacabana.</h2>
-      <form action="">
-        <div class="row">
-          <div class="col-md-3">
-            <h3>Valor promocional:</h3>
-            <h4>R$ 1232,00</h4>
-          </div>
-          <div class="col-md-3">
-            <h3>Quantidade:</h3>
-            <div class="form-group">
-              <label for="" class="sr-only">Quantidade:</label>
-              <input type="text" name="" class="form-control" id="">
+
+  <!-- Declaração do formulário -->
+  <form target="pagseguro" method="post"
+   action="https://pagseguro.uol.com.br/v2/checkout/payment.html">
+
+    <!-- Campos obrigatórios -->
+    <input type="hidden" name="receiverEmail" value="raphapassini@gmail.com">
+    <input type="hidden" name="currency" value="BRL">
+
+    <!-- Itens do pagamento (ao menos um item é obrigatório) -->
+    <input type="hidden" name="itemId1" value="{{object.pk}}">
+    <input type="hidden" name="itemDescription1" value="{{object.titulo}}">
+    <input type="hidden" name="itemAmount1" value="{{object.preco_por|unlocalize}}">
+    <input type="hidden" name="itemQuantity1" value="1">
+    <input type="hidden" name="itemWeight1" value="0">
+
+    <!-- Código de referência do pagamento no seu sistema (opcional) -->
+    <input type="hidden" name="reference" value="{{object.pk}}">
+
+    <div class="row checkout">
+      <div class="col-md-12">
+        <h1>Comprar pacote: {{ object.titulo }}</h1>
+        <h2>Variação: Saída de Belo Horizonte (Confins), 3 noites em Copacabana.</h2>
+        <form action="">
+          <div class="row">
+            <div class="col-md-3">
+              <h3>Valor promocional:</h3>
+              <h4>R$ {{ object.preco_por|localize }}</h4>
+            </div>
+            <div class="col-md-3">
+              <h3>Quantidade:</h3>
+              <div class="form-group">
+                <label for="" class="sr-only">Quantidade:</label>
+                <input type="text" name="qtty" class="form-control" id="qtty" value="1">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <h3>Taxas e encargos:</h3>
+              <h4>R$ 1232,00</h4>
+            </div>
+            <div class="col-md-3">
+              <h3>Valor total:</h3>
+              <h4 id="total">R$ {{object.preco_por}}</h4>
             </div>
           </div>
-          <div class="col-md-3">
-            <h3>Taxas e encargos:</h3>
-            <h4>R$ 1232,00</h4>
-          </div>
-          <div class="col-md-3">
-            <h3>Valor total:</h3>
-            <h4>R$ 1232,00</h4>
-          </div>
-        </div>
-        <input type="submit" value="Pagar com Pagseguro" class="btn btn-primary">
-        <p>Pagamento confiável via Pagseguro ®.</p>
-        <p>Parcele em até 18 vezes!</p>
-      </form>
+          <input type="image" name="submit"
+          src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/209x48-comprar-assina.gif"
+          alt="Pague com PagSeguro" id="pague_seguro">
+          <p>Pagamento confiável via Pagseguro ®.</p>
+          <p>Parcele em até 18 vezes!</p>
+      </div>
     </div>
-  </div>
+  </form>
   {% endwith %}
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+  $("#qtty").keyup(function() {
+    preco  = {{ object.preco_por|unlocalize }}
+    qtty   = $(this).val()
+    total  = (qtty * preco).toFixed(2)
+    $value = $("#total")
+
+    $value.html('R$ ' + total.replace('.', ','))
+    $value.animate({'font-size': "+=10px"}, 200, function() {
+      $(this).animate({'font-size': "-=10px"}, 200)
+    })
+
+    sync_pague_seguro_form(qtty)
+  })
+
+  function sync_pague_seguro_form(qtty, preco) {
+    $("input[name='itemQuantity1']").val(qtty);
+  }
+
+</script>
 {% endblock %}

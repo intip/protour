@@ -22,6 +22,7 @@ city_tour_bh = Recipe(
     publicado=True,
     destaque=True,
     destino=foreign_key(belzonte),
+    preco_por=100.40
 )
 
 city_tour_bh_despublicado = Recipe(

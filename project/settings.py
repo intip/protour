@@ -33,7 +33,7 @@ DATABASES = {
 
 LANGUAGES = (
     ('pt-br', u'Português'),
-    ('en', u'Ingles'),
+    # ('en', u'Ingles'),
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
