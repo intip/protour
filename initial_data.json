@@ -1,0 +1,25 @@
+[{
+    "pk": 1,
+    "model": "fiber.page",
+    "fields": {
+        "meta_description": "",
+        "rght": 14,
+        "updated": "2013-11-14T14:22:07.987",
+        "meta_keywords": "",
+        "level": 0,
+        "parent": null,
+        "title": "Sobre",
+        "url": "",
+        "template_name": "",
+        "created": "2013-11-14T14:22:07.986",
+        "mark_current_regexes": "",
+        "redirect_page": null,
+        "lft": 1,
+        "protected": false,
+        "tree_id": 1,
+        "doc_title": "",
+        "is_public": true,
+        "show_in_menu": true,
+        "metadata": null
+    }
+}]
