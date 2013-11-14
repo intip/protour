@@ -14,7 +14,7 @@ Projeto de sites simples de e-commerce de produtos turísticos.
     mkdir media
     python manage.py syncdb
     python manage.py migrate_business
-    python manage.py loaddata initial_data.json
+    python manage.py loaddata site_data.json
 
 O projeto requer less >= 1.4.0.
 
@@ -24,7 +24,7 @@ O projeto requer less >= 1.4.0.
     psql -c 'create database test_portalturismo;' -U postgres
     python manage.py syncdb --settings=project.test_settings --noinput
     python manage.py migrate_business --settings=project.test_settings
-    python manage.py loaddata initial_data.json --settings=project.test_settings
+    python manage.py loaddata site_data.json --settings=project.test_settings
     bash test.sh
 
 ## Gerência do projeto
