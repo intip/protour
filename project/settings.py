@@ -101,6 +101,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     # other finders..
     'less.finders.LessFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -123,6 +124,11 @@ SECRET_KEY = '4zi#*lgzxm2_rbqq*90drf#as+1laewp)i^4-z@z68#k0fh#w('
 #     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 # )
 
+MIDDLEWARE_CLASSES = (
+    list(MIDDLEWARE_CLASSES) +
+    ['fiber.middleware.ObfuscateEmailAddressMiddleware',
+     'fiber.middleware.AdminPageMiddleware'])
+
 ROOT_URLCONF = 'project.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -139,6 +145,10 @@ INSTALLED_APPS = [
     # my apps
     'core',
     'less',
+    'mptt',
+    'compressor',
+    'easy_thumbnails',
+    'fiber',
 
 ] + INSTALLED_APPS
 

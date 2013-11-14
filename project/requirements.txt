@@ -1,7 +1,7 @@
 Django==1.5.5
 Fabric==1.5.0
 FeinCMS==1.6.2
-Pillow==2.0.0
+Pillow==2.2.1
 South==0.7.6
 Unidecode==0.04.13
 Unipath==1.0
@@ -9,14 +9,17 @@ argparse==1.2.1
 beautifulsoup4==4.2.1
 coverage==3.7
 dj-database-url==0.2.1
+django-appconf==0.6
 django-apptemplates==0.0.1
 django-bootstrap-toolkit==2.5.11
 -e git://github.com/mauler/django-ckeditor.git@707445abdb1904366a7da895262afea7dee2500b#egg=django_ckeditor-dev
 django-classy-tags==0.4
+django-compressor==1.3
 django-debug-panel==0.5.9
 django-debug-toolbar==0.9.4
 django-discover-runner==1.0
 django-extensions==1.2.0
+-e git+git@github.com:intip/django-fiber.git@1048f3243c7fa88fd5814f9f89583ddeb62c7f56#egg=django_fiber-dev
 django-filter==0.5.4
 django-grappelli==2.4.7
 django-grappelli-navbar==0.1.3
@@ -24,7 +27,7 @@ django-jsonfield==0.9.4
 -e git://github.com/mauler/django-jsonit.git@c810273a7154e34adccd3bb31d9674dcc12ed9a9#egg=django_jsonit-dev
 django-less==0.7.2
 django-localflavor==1.0
-django-mptt==0.5.5
+django-mptt==0.6.0
 django-nose==1.2
 django-pdb==0.3.2
 django-post-office==0.3.1
@@ -32,8 +35,8 @@ django-taggit==0.10a1
 django-tinymce==1.5.1
 django-uuidfield==0.4.0
 django-xhtml2pdf==0.0.3
-djangorestframework==2.1.6
-easy-thumbnails==1.2
+djangorestframework==2.3.8
+easy-thumbnails==1.4
 gunicorn==0.16.1
 html5lib==1.0b3
 httplib2==0.8

@@ -20,6 +20,10 @@ urlpatterns = patterns(
 
     # Uncomment the next line to enable the admin:
     url(r'^', include('core.urls', namespace="core")),
+    (r'^api/v2/', include('fiber.rest_api.urls')),
+    (r'^admin/fiber/', include('fiber.admin_urls')),
+    (r'^jsi18n/$', 'django.views.i18n.javascript_catalog',
+        {'packages': ('fiber',)}),
 
     url(r'^ckeditor/', include('ckeditor.urls')),
     url(r'^grappelli/', include('grappelli.urls')),
@@ -41,3 +45,5 @@ if settings.DEBUG:
             'django.views.static.serve',
             {'document_root': settings.STATIC_ROOT, }),
     )
+
+urlpatterns += patterns('', url(r'', 'fiber.views.page'),)
