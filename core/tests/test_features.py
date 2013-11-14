@@ -9,6 +9,7 @@ from splinter.browser import Browser
 
 
 class ProtourFeatureTest(LiveServerTestCase):
+    fixtures = ['site_data.json']
 
     @classmethod
     def setUpClass(cls):
