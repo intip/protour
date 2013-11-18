@@ -52,11 +52,16 @@ def collectstatic():
 
 def deploy():
     pull()
+    update_submodule()
     install_requirements()
     manage('syncdb --noinput')
     manage('migrate --all')
     collectstatic()
     restart()
+
+
+def update_submodule():
+    git('submodule update')
 
 
 def fastdeploy():
