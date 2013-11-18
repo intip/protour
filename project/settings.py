@@ -183,6 +183,8 @@ LOGGING = {
 
 PRO_TOUR = True
 
+FIBER_AUTO_CREATE_CONTENT_ITEMS = True
+
 try:
     from local_settings import *
 except ImportError:
