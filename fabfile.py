@@ -50,20 +50,11 @@ def collectstatic():
     manage('collectstatic --noinput')
 
 
-def installwatson():
-    manage('installwatson')
-
-
-def buildwatson():
-    manage('buildwatson')
-
-
 def deploy():
     pull()
     install_requirements()
     manage('syncdb --noinput')
     manage('migrate --all')
-    buildwatson()
     collectstatic()
     restart()
 
@@ -71,6 +62,10 @@ def deploy():
 def fastdeploy():
     pull()
     restart()
+
+
+def initdata():
+    manage('loaddata site_data.json')
 
 
 def git(cmd):
