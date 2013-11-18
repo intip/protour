@@ -3,6 +3,7 @@
   {% with "0123456789" as numbers %}
   <div class="row detalhes-pacote">
     <div class="col-md-9">
+      {% if object.imagem_set.all %}
       <div class="row">
         <div class="col-md-12">
           <div class="carousel slide" id="galeria" data-ride="carousel">
@@ -38,6 +39,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
       <div class="row">
         <div class="col-md-12">
           <h1 class="titulo-pacote">{{ object.titulo }}</h1>
