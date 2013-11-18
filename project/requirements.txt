@@ -20,7 +20,7 @@ django-debug-panel==0.5.9
 django-debug-toolbar==0.9.4
 django-discover-runner==1.0
 django-extensions==1.2.0
--e git+git@github.com:intip/django-fiber.git@1048f3243c7fa88fd5814f9f89583ddeb62c7f56#egg=django_fiber-dev
+-e git+git@github.com:intip/django-fiber.git@4072f5334a6bb47c3ad47fd3e4ee3cff9ec57d5b#egg=django_fiber-dev
 django-filter==0.5.4
 django-grappelli==2.4.7
 django-grappelli-navbar==0.1.3
