@@ -149,6 +149,7 @@ INSTALLED_APPS = [
     'compressor',
     'easy_thumbnails',
     'fiber',
+    'django_coverage',
 
 ] + INSTALLED_APPS
 
@@ -184,6 +185,8 @@ LOGGING = {
 PRO_TOUR = True
 
 FIBER_AUTO_CREATE_CONTENT_ITEMS = True
+
+COVERAGE_BADGE_TYPE = "drone.io"
 
 try:
     from local_settings import *

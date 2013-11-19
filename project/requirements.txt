@@ -16,11 +16,12 @@ django-bootstrap-toolkit==2.5.11
 -e git://github.com/mauler/django-ckeditor.git@537d0597f3a9bc1dd552b84c9a0cf383e12d8742#egg=django_ckeditor_updated-dev
 django-classy-tags==0.4
 django-compressor==1.3
+django-coverage==1.2.4
 django-debug-panel==0.5.9
 django-debug-toolbar==0.9.4
 django-discover-runner==1.0
 django-extensions==1.2.0
--e git+git@github.com:intip/django-fiber.git@6a4f4d42e6fb8168a8a3033109bb83528d893c9b#egg=django_fiber-dev
+-e git+git@github.com:intip/django-fiber.git@bb30340c837199102bd37c0453efcb95c6248c92#egg=django_fiber-dev
 django-filter==0.5.4
 django-grappelli==2.4.7
 django-grappelli-navbar==0.1.3
