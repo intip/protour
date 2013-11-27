@@ -1,7 +1,6 @@
 @import "bootstrap.less";
 
 // Mixins {
-
 .border-radius (@nw: 5px; @ne: 5px; @se: 5px; @sw: 5px ) {
   -webkit-border-radius: @nw @ne @se @sw;
   -moz-border-radius: @nw @ne @se @sw;
@@ -17,6 +16,9 @@
 }
 
 // } Mixins
+body {
+  font-family: 'Titillium Web', sans-serif;
+}
 
 #fb-root {
     display: none;
@@ -35,15 +37,16 @@
 .top {
     // Mini-menu no topo
     .nav-pills {
-        margin: 15px 0 0 0;
+        margin: 15px 25px 0 0;
         list-style: none;
+        font-weight: 700;
         li {
             margin: 4px;
-            font-size: 16px;
+            font-size: 18px;
         }
         a {
             display: inline;
-            color: #222;
+            color: #777;
         }
         > li + li:before {
             padding: 0 8px 0 4px;
@@ -56,10 +59,18 @@
 // Cabeçalho com chamada e busca
 .header {
     background-color: @brand-success;
+    background-image:url('../imgs/map.png');
+    background-position: 250px -100px;
     color: #FFF;
+    font-size: 16px;
     margin-top: 5px;
+    font-weight: 700;
+    h2 {
+        font-size: 36px;
+    }
+
     .top-actions {
-        padding: 5px 0 25px 35px;
+        padding: 11px 0 30px 15px;
     }
 
     .twitter-typeahead {
@@ -133,12 +144,14 @@
         background-color: @brand-primary;
         border-color: @brand-primary;
         .navbar-nav > li > a {
+            font-weight: 700;
+            font-size: 18px;
             color: #FFF;
             margin: 0;
             display: inline;
         }
         li {
-            padding: 14px 0;
+            padding: 20px 0;
         }
         li+li:before {
             content: " ";
@@ -167,10 +180,20 @@
     .border-radius(10px; 10px; 10px; 10px);
     background-color: #FFF;
     .box-shadow(0; 0; 8px; rgba(100,100,100,.15));
+
+    &:hover {
+        border: 5px solid @brand-primary;
+        margin: -5px -5px 5px -5px;
+    }
 }
 
 // Pacote na home
 .home .pacote {
+    margin-bottom: 35px;
+    &:hover {
+        margin-bottom: 30px;
+    }
+
     h3 {
         margin-top: 10px;
         margin-bottom: 6px;
@@ -224,6 +247,9 @@
 .sidebar {
     .white-box {
         padding:10px;
+    }
+    iframe {
+        background-color: #FFF;
     }
 }
 
