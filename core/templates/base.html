@@ -29,74 +29,98 @@
             <img class="img-responsive" alt="{{ empresa.nome }}" title="{{ empresa.nome }}" src="{{ empresa.logo.url }}">
           </a>
         </div>
-        {% endif %}
-        <div class="col-md-8 top-actions">
-          <div class="row">
-            <div class="col-md-12">
-              <h2>{% show_content "Título" %}</h2>
-            </div>
+        <div class="col-md-8">
+          <div class="pull-right">
+            <ul class="nav-pills">
+              <li><a href="">Entrar</a></li>
+              <li><a href="">Como funciona?</a></li>
+              <li><a href="">Fale conosco</a></li>
+            </ul>
           </div>
-          <div class="row">
-            <div class="col-md-8">
-              <input type="text" class="pacote-search" placeholder="Para onde você deseja ir?">
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 top-actions">
+            <div class="row">
+              <div class="col-md-6">
+                <h2>{% show_content "Título" %}</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <input type="text" class="pacote-search form-control" placeholder="Para onde você deseja ir?">
+                  <p>{% show_content "Busca Ajuda" %}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <nav class="navbar navbar-default" role="navigation">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              {% for destino in destinos %}
-              <li><a href="{% url 'core:destino' slug=destino.slug %}">{{ destino.titulo }}</a></li>
-              {% endfor %}
-            </ul>
-          </div>
-
-        </nav>
-      </div>
     </div>
-    <div class="container mid">
-      {% if fiber_page.title %}
-      <h1>{{ fiber_page.title }}</h1>
-      {% endif %}
-      {% show_page_content "content" %}
-      {% block body %}
-      {% endblock %}
-    </div>
-    <div class="bot">
-      <div class="container">
+    <div class="content-block">
+      <div class="container main-nav">
         <div class="row">
-          <div class="col-md-4">
-            <h3>Sobre</h3>
-            {% show_menu "Sobre" 1 1 "all" %}
+          <div class="col-md-12">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
+
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  {% for destino in destinos %}
+                  <li><a href="{% url 'core:destino' slug=destino.slug %}">{{ destino.titulo }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+            </nav>
           </div>
-          <div class="col-md-4">
-            <h3>Sobre</h3>
-            <ul>
-              <li>Lorem.</li>
-              <li>Impedit.</li>
-              <li>Magni.</li>
-              <li>Consequatur.</li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h3>Sobre</h3>
-            <ul>
-              <li>Lorem.</li>
-              <li>Impedit.</li>
-              <li>Magni.</li>
-              <li>Consequatur.</li>
-            </ul>
+        </div>
+      </div>
+      <div class="container mid">
+        {% if fiber_page.title %}
+        <h1>{{ fiber_page.title }}</h1>
+        {% endif %}
+        {% show_page_content "content" %}
+        {% block body %}
+        {% endblock %}
+      </div>
+      <div class="bot">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h3>Sobre</h3>
+              {% show_menu "Sobre" 1 1 "all" %}
+            </div>
+            <div class="col-md-4">
+              <h3>Sobre</h3>
+              <ul>
+                <li>Lorem.</li>
+                <li>Impedit.</li>
+                <li>Magni.</li>
+                <li>Consequatur.</li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h3>Sobre</h3>
+              <ul>
+                <li>Lorem.</li>
+                <li>Impedit.</li>
+                <li>Magni.</li>
+                <li>Consequatur.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

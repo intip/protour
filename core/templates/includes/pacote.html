@@ -1,47 +1,29 @@
-{% with "0123456789" as numbers %}
+{% load thumbnail %}
 <div class="row">
-  <div class="col-md-12">
-    {% if pacote.imagem %}
-    <div class="imagem-pacote">
-      <a href="{% url 'core:detalhes' slug=pacote.slug %}"><img class="img-responsive" src="{{ pacote.imagem.url }}"></a>
-      <div class="desconto">
-        <p>{{ pacote.desconto }}%</p>
-        <p>OFF!!</p>
-      </div>
-    </div>
-    {% endif %}
+  {% if pacote.imagem %}
+  <div class="imagem-pacote">
+    <a href="{% url 'core:detalhes' slug=pacote.slug %}"><img class="img-responsive" src="{% thumbnail pacote.imagem 848x250 crop %}"></a>
   </div>
+  {% endif %}
 </div>
-<div class="row">
-  <div class="col-md-7">
+<div class="row infos">
+  <div class="col-md-5">
     <h3><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.titulo }}</a></h3>
     {% if pacote.resumo %}
     <p><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.resumo }}</a></p>
     {% endif %}
   </div>
-  <div class="col-md-5 detalhes">
-    {% if size == "medium" %}
-      <div class="row">
-        <div class="col-md-12 precos">
-          <p class="de"><em>De:</em> <del>R$ {{ pacote.preco_de }}</del></p>
-          <p class="por"><em>Por:</em> R$ {{ pacote.preco_por }}</span></p>
-        </div>
-      </div>
-    {% else %}
-      <div class="row">
-        <div class="col-md-6">
-          <a href="{% url 'core:detalhes' slug=pacote.slug %}" class="btn btn-primary">Ver detalhes</a>
-        </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12 precos">
-              <p class="de"><em>De:</em> <del>R$ {{ pacote.preco_de }}</del></p>
-              <p class="por"><em>Por:</em> R$ {{ pacote.preco_por }}</span></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    {% endif %}
+  <div class="col-md-3 precos">
+    <p class="de">De R$ {{ pacote.preco_de }}</p>
+    <p class="por">Por: R$ <span>{{ pacote.preco_por }}</span></p>
+  </div>
+  <div class="col-md-2">
+    <div class="desconto">
+      Desconto
+      <div class="valor">{{ pacote.desconto }}%</div>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <a href="{% url 'core:detalhes' slug=pacote.slug %}" class="btn btn-primary detalhes">Ver Detalhes</a>
   </div>
 </div>
-{% endwith %}

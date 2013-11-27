@@ -14,33 +14,19 @@
     <h1>Pacotes em {{ destino.titulo }}</h1>
     {% endif %}
     {% for pacote in object_list %}
-    <div class="row pacote big">
+    <div class="row pacote white-box">
       <div class="col-md-12">
         {% include 'includes/pacote.html' %}
       </div>
     </div>
     {% endfor %}
-    {# <div class="row pacote"> #}
-      {# {% with size="medium" %} #}
-      {# <div class="col-md-6"> #}
-        {# <div class="medium"> #}
-          {# {% include 'includes/pacote.html' %} #}
-        {# </div> #}
-      {# </div> #}
-      {# <div class="col-md-6"> #}
-        {# <div class="medium"> #}
-          {# {% include 'includes/pacote.html' %} #}
-        {# </div> #}
-      {# </div> #}
-      {# {% endwith %} #}
-    {# </div> #}
   </div>
-  <div class="col-md-3">
-    <div class="fiber">
+  <div class="col-md-3 sidebar">
+    <div class="white-box">
       {% show_content "Publicidade1" %}
     </div>
     <div class="fb-like-box" data-href="{{ empresa.url_facebook|default:'https://www.facebook.com/Intipbrasil' }}" data-width="263px" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
-    <div class="fiber" style="margin-top:40px">
+    <div class="white-box" style="margin-top:40px">
       {% show_content "Publicidade2" %}
     </div>
   </div>
