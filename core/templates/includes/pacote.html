@@ -3,6 +3,7 @@
   {% if pacote.imagem %}
   <div class="imagem-pacote">
     <a href="{% url 'core:detalhes' slug=pacote.slug %}"><img class="img-responsive" src="{% thumbnail pacote.imagem 848x250 crop %}"></a>
+    <div class="overlay"></div>
     <div class="titulo-local hidden-xs">
       <h3><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.titulo }}</a></h3>
       <h4><i class="sprite small-marker"></i> {{ pacote.destino }}</h4>

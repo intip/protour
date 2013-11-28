@@ -67,9 +67,13 @@ h1, h2, h3, h4, h5, h6 {
 
 // Topo
 .top {
+    min-height: 85px;
+    img {
+        margin-top: 15px;
+    }
     // Mini-menu no topo
     .nav-pills {
-        margin: 15px 25px 0 0;
+        margin: 25px 25px 0 0;
         list-style: none;
         font-weight: 700;
         li {
@@ -187,6 +191,8 @@ h1, h2, h3, h4, h5, h6 {
     .navbar {
         background-color: @brand-primary;
         border-color: @brand-primary;
+        margin-bottom: 30px;
+        margin-top: 5px;
         .navbar-nav > li > a {
             font-weight: 700;
             font-size: 18px;
@@ -249,6 +255,10 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
+    .imagem-pacote {
+        position: relative;
+    }
+
     .titulo-local {
         position: absolute;
         top:20px;
@@ -269,6 +279,15 @@ h1, h2, h3, h4, h5, h6 {
 
     .imagem-pacote img {
         .border-radius(10px; 10px; 0; 0);
+    }
+
+    .overlay {
+        .border-radius(10px; 10px; 0; 0);
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        #gradient > .directional(rgba(0, 0, 0, 0.5); rgba(255,255,255, 0) 45%; 158deg;)
     }
 
     .infos {
