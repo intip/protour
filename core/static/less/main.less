@@ -104,6 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 
         .big-marker {
             margin-top: 10px;
+            margin-right: 25px;
         }
 
     }
@@ -238,6 +239,16 @@ h1, h2, h3, h4, h5, h6 {
         margin-bottom: 30px;
     }
 
+    @media (max-width: @screen-md-max) and (min-width: @screen-sm-min) {
+        .col-md-2 {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        .col-md-2 {
+            width: 15.9%;
+        }
+    }
+
     .titulo-local {
         position: absolute;
         top:20px;
@@ -278,6 +289,13 @@ h1, h2, h3, h4, h5, h6 {
 
     .precos {
         text-align: right;
+        padding-top: 10px;
+        @media (max-width: @screen-xs-max) {
+            text-align: left;
+            .de {
+                margin-top: 15px;
+            }
+        }
     }
 
     .de {
@@ -286,10 +304,16 @@ h1, h2, h3, h4, h5, h6 {
 
     .precos {
         font-size: 18px;
+        @media (max-width: @screen-md-max) and (min-width: @screen-sm-min) {
+            font-size: 16px;
+        }
         .por span {
             color: @brand-success;
             font-size: 32px;
             font-weight: bold;
+            @media (max-width: @screen-md-max){
+                font-size: 28px;
+            }
         }
     }
 
@@ -310,6 +334,9 @@ h1, h2, h3, h4, h5, h6 {
         line-height: 22px;
         padding: 20px 10px;
         white-space: normal;
+        @media (max-width: @screen-xs-max){
+            width: 100%;
+        }
     }
 }
 

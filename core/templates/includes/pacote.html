@@ -3,7 +3,7 @@
   {% if pacote.imagem %}
   <div class="imagem-pacote">
     <a href="{% url 'core:detalhes' slug=pacote.slug %}"><img class="img-responsive" src="{% thumbnail pacote.imagem 848x250 crop %}"></a>
-    <div class="titulo-local">
+    <div class="titulo-local hidden-xs">
       <h3><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.titulo }}</a></h3>
       <h4><i class="sprite small-marker"></i> {{ pacote.destino }}</h4>
     </div>
@@ -11,7 +11,12 @@
   {% endif %}
 </div>
 <div class="row infos">
-  <div class="col-md-5 description">
+  <div class="col-md-5 description col-sm-5 col-xs-12">
+    <div class="row visible-xs">
+      <div class="col-md-12">
+        <h3><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.titulo }}</a></h3>
+      </div>
+    </div>
     {% if pacote.resumo %}
     <div class="row">
       <div class="col-md-12">
@@ -19,26 +24,28 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-6 col-xs-6">
         <i class="icon carinha pull-left"></i> 2 pessoas
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-6 col-xs-6">
         <i class="icon solzinho pull-left"></i> 5 diárias
       </div>
     </div>
     {% endif %}
   </div>
-  <div class="col-md-3 precos">
-    <p class="de">De R$ {{ pacote.preco_de }}</p>
-    <p class="por">Por: R$ <span>{{ pacote.preco_por }}</span></p>
+  <div class="col-md-3 precos col-sm-3 col-xs-12">
+    <div class="row">
+      <p class="de col-xs-6 col-md-12 col-sm-12">De R$ {{ pacote.preco_de }}</p>
+      <p class="por col-xs-6 col-md-12 col-sm-12">Por: R$ <span>{{ pacote.preco_por }}</span></p>
+    </div>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2 col-sm-2 col-xs-6">
     <div class="desconto">
       Desconto
       <div class="valor">{{ pacote.desconto }}%</div>
     </div>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2 col-sm-2 col-xs-6">
     <a href="{% url 'core:detalhes' slug=pacote.slug %}" class="btn btn-primary detalhes">Ver Detalhes</a>
   </div>
 </div>
