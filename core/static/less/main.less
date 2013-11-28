@@ -16,8 +16,13 @@
 }
 
 // } Mixins
-body {
-  font-family: 'Titillium Web', sans-serif;
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
 }
 
 #fb-root {
@@ -29,8 +34,35 @@ body {
     width: 100% !important;
 }
 
-.top-actions {
-    // padding-top: 30px
+// Sprite
+.sprite {
+    background: url('../imgs/sprite.png') no-repeat 0 0;
+    display: inline-block;
+
+    &.big-marker {
+        width: 45px;
+        height: 60px;
+    }
+
+    &.small-marker {
+        background-position: -56px 2px;
+        width: 9px;
+        height: 14px;
+        margin-right: 4px;
+    }
+
+}
+
+.icon {
+    .sprite;
+    width: 26px;
+    height: 28px;
+    &.carinha {
+        background-position: -72px -4px;
+    }
+    &.solzinho {
+        background-position: -109px -5px;
+    }
 }
 
 // Topo
@@ -58,15 +90,26 @@ body {
 
 // Cabeçalho com chamada e busca
 .header {
-    background-color: @brand-success;
     background-image:url('../imgs/map.png');
+    background-color: @brand-success;
     background-position: 250px -100px;
     color: #FFF;
     font-size: 16px;
     margin-top: 5px;
     font-weight: 700;
+
     h2 {
         font-size: 36px;
+        margin-bottom: 25px;
+
+        .big-marker {
+            margin-top: 10px;
+        }
+
+    }
+
+    .help-text {
+        margin: 0 0 0 5px;
     }
 
     .top-actions {
@@ -191,12 +234,26 @@ body {
 .home .pacote {
     margin-bottom: 35px;
     &:hover {
+        .border-radius(15px; 15px; 10px; 10px);
         margin-bottom: 30px;
     }
 
-    h3 {
-        margin-top: 10px;
-        margin-bottom: 6px;
+    .titulo-local {
+        position: absolute;
+        top:20px;
+        left:20px;
+        text-shadow: #000 0 2px;
+        h3 {
+            font-size: 40px;
+            margin: 0;
+            a {
+                color: #FFF;
+            }
+        }
+        h4 {
+            color: #FFF;
+            font-weight: 700;
+        }
     }
 
     .imagem-pacote img {
@@ -206,6 +263,17 @@ body {
     .infos {
         padding-top: 10px;
         padding-bottom: 10px;
+
+        .description {
+            font-size: 16px;
+            line-height: 30px;
+
+            .icon {
+                margin-right: 10px;
+            }
+
+        }
+
     }
 
     .precos {
@@ -217,27 +285,30 @@ body {
     }
 
     .precos {
-        font-size: 14px;
+        font-size: 18px;
         .por span {
             color: @brand-success;
-            font-size: 26px;
+            font-size: 32px;
             font-weight: bold;
         }
     }
 
     .desconto {
         background-color: #e5e5e5;
-        font-size: 17px;
+        font-size: 20px;
         text-align: center;
         .border-radius();
         .valor {
             margin-top: -10px;
-            font-size: 40px;
+            font-size: 48px;
         }
     }
 
     .detalhes {
         font-size: 20px;
+        font-weight: 700;
+        line-height: 22px;
+        padding: 20px 10px;
         white-space: normal;
     }
 }
@@ -257,6 +328,49 @@ body {
 .bot {
     border-top: 2px solid @brand-success;
     margin-top: 20px;
+    background-image:url('../imgs/map2.png');
+    background-position: 35px 15px;
+    padding-top: 15px;
+    padding-bottom: 50px;
+    background-repeat: repeat no-repeat;
+
+    .menu {
+        padding: 0 20px;
+    }
+
+    h3 {
+        color: @brand-primary;
+        border-bottom: 2px solid #c3c3c3;
+        font-size: 26px;
+        font-weight: 400;
+        padding-bottom: 10px;
+    }
+
+    ul {
+        line-height: 22px;
+        list-style: none;
+        padding: 0;
+    }
+
+    li a {
+        color: #555;
+        font-size: 16px;
+    }
+
+    .faixa {
+        background-color: rgba(red(@brand-success), green(@brand-success), blue(@brand-success), 0.7);
+        color: #FFF;
+        margin-top: 25px;
+        padding: 25px;
+        .title {
+            font-size: 48px;
+            font-weight: 300;
+        }
+        .copyright {
+            font-size: 18px;
+        }
+    }
+
 }
 
 // Detalhes pacote

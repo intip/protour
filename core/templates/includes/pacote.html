@@ -3,14 +3,29 @@
   {% if pacote.imagem %}
   <div class="imagem-pacote">
     <a href="{% url 'core:detalhes' slug=pacote.slug %}"><img class="img-responsive" src="{% thumbnail pacote.imagem 848x250 crop %}"></a>
+    <div class="titulo-local">
+      <h3><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.titulo }}</a></h3>
+      <h4><i class="sprite small-marker"></i> {{ pacote.destino }}</h4>
+    </div>
   </div>
   {% endif %}
 </div>
 <div class="row infos">
-  <div class="col-md-5">
-    <h3><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.titulo }}</a></h3>
+  <div class="col-md-5 description">
     {% if pacote.resumo %}
-    <p><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.resumo }}</a></p>
+    <div class="row">
+      <div class="col-md-12">
+        <p>{{ pacote.resumo }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <i class="icon carinha pull-left"></i> 2 pessoas
+      </div>
+      <div class="col-md-6">
+        <i class="icon solzinho pull-left"></i> 5 diárias
+      </div>
+    </div>
     {% endif %}
   </div>
   <div class="col-md-3 precos">
