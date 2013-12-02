@@ -79,13 +79,9 @@
   // animation if you trip this while in the middle of another animation.
 
   // Set gradients for backgrounds
-  &.left {
-    #gradient > .horizontal(@start-color: rgba(0,0,0,.5); @end-color: rgba(0,0,0,.0001));
-  }
   &.right {
     left: auto;
     right: 0;
-    #gradient > .horizontal(@start-color: rgba(0,0,0,.0001); @end-color: rgba(0,0,0,.5));
   }
 
   // Hover/focus state
@@ -93,7 +89,6 @@
   &:focus {
     color: @carousel-control-color;
     text-decoration: none;
-    .opacity(.9);
   }
 
   // Toggles
