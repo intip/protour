@@ -55,7 +55,7 @@
               <div class="col-md-2">
               </div>
             </div>
-            <div class="row">
+            <div class="row hidden-sm hidden-xs">
               <div class="col-md-8">
                 <div class="form-group">
                   <input type="text" class="pacote-search form-control" placeholder="Para onde você deseja ir?">
@@ -213,11 +213,12 @@
           url:         "{{ empresa.zendesk_url }}",
           tabTooltip:  "Faça uma pergunta",
           tabImageURL: "https://assets.zendesk.com/external/zenbox/images/tab_pt_questions_right.png",
-          tabColor:    "#a4c639",
+          tabColor:    "#7fbb00",
           tabPosition: "Right"
         });
       }
     </script>
+    <script src="{{ STATIC_URL}}js/jquery.sticky-kit.min.js"></script>
     {% block scripts %}{% endblock %}
   </body>
 </html>

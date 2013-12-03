@@ -15,7 +15,20 @@
   box-shadow: @arguments;
 }
 
+.white-well {
+    background-color: #FFF;
+    .border-radius();
+    .box-shadow(0; 0; 8px; rgba(100,100,100,.15));
+}
+
+.grey-bot {
+    border-bottom: 2px solid #e5e5e5;
+}
+
 // } Mixins
+body{
+    color: #555;
+}
 
 body, h1, h2, h3, h4, h5, h6 {
     font-family: 'Titillium Web', sans-serif;
@@ -76,6 +89,12 @@ h1, h2, h3, h4, h5, h6 {
         margin: 2px 6px 0 4px;
     }
 
+    &.pagseguro {
+        background-position: -250px -4px;
+        width: 146px;
+        height: 62px
+    }
+
 }
 
 .icon {
@@ -120,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 // Cabeçalho com chamada e busca
 .header {
     background-image:url('../imgs/map.png');
-    background-color: @brand-success;
+    background-color: #a4c639;
     background-position: 250px 0;
     background-repeat: no-repeat;
     color: #FFF;
@@ -468,10 +487,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .well {
-        background-color: #FFF;
-        .border-radius();
-        .box-shadow(0; 0; 8px; rgba(100,100,100,.15));
-
+        .white-well;
+        padding: 12px 15px;
         h2 {
             color: @brand-success;
             font-weight: 400;
@@ -488,12 +505,14 @@ h1, h2, h3, h4, h5, h6 {
             color: @brand-primary;
             font-weight: 400;
             font-size: 22px;
+            margin: 0;
         }
         h4 {
             font-size: 14px;
             font-weight: 400;
             padding-bottom: 14px;
             border-bottom: 2px solid #e3e3e3;
+            margin-top: 4px;
         }
         p {
             font-size: 16px;
@@ -582,5 +601,98 @@ h1, h2, h3, h4, h5, h6 {
         .border-radius(7px, 7px, 7px, 7px);
         opacity: 0.6;
         .box-shadow(0; 0; 8px; rgba(100,100,100,.15));
+    }
+}
+
+// Tela de pagamento
+.checkout {
+    .white-well {
+        padding: 20px;
+    }
+    .title {
+        color: @brand-primary;
+        font-size: 42px;
+        margin-top: 0;
+    }
+
+    .pacote {
+        h1 {
+            color: @brand-primary;
+            font-size: 26px;
+            font-weight: 400;
+            margin: 0 0 2px 0;
+        }
+        h2 {
+            font-size: 14px;
+            color: #555;
+            margin-top: 0;
+        }
+        .grey-bot {
+            padding-bottom: 12px;
+        }
+        img {
+            margin-right: 14px;
+            .box-shadow();
+        }
+    }
+
+    .variacao {
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 20px
+    }
+
+    .table {
+        font-size: 20px;
+        font-weight: 700;
+        .grey-bot();
+        text-align: center;
+        thead {
+            background-color: #e5e5e5;
+        }
+        input {
+            display: inline-block;
+            height: 45px;
+            margin-right: 5px;
+            width: 55px;
+        }
+        td {
+            line-height: 2.1;
+        }
+        .taxas {
+            color: @brand-success
+        }
+    }
+
+    .total {
+        .grey-bot();
+        text-align: right;
+        p {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        #total {
+            background-color: #e5e5e5;
+            color: @brand-success;
+            font-size: 32px;
+            padding: 20px;
+            display: inline-block;
+            .border-radius();
+            margin-left: 15px;
+        }
+    }
+
+    .submit {
+        padding-top: 23px;
+        font-size: 18px;
+        p {
+            margin: 0;
+        }
+        .btn {
+            width: 100%;
+            font-size: 24px;
+            font-weight: 700;
+            white-space: normal;
+        }
     }
 }
