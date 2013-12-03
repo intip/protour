@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
+{% block title %}{{ empresa.nome }} - {{ object.titulo }}{% endblock %}
 {% block body %}
   <div class="row detalhes-pacote">
     <div class="col-md-9">
       <div class="row">
         <div class="col-md-12">
           <h1 class="titulo-pacote">{{ object.titulo }}</h1>
-          <h2 class="destino">{{ object.destino }}</h2>
+          <h2 class="destino"><i class="sprite sm-marker-black"></i> {{ object.destino }}</h2>
         </div>
       </div>
       {% if object.imagem_set.all %}
@@ -116,13 +117,13 @@
       {% for variacao in object.get_variacoes|slice:"0:1" %}
         {% for i in variacao.variacaopreco_set.all|slice:":1" %}
         <h3>{{ object.titulo }}</h3>
-        <h4>{{ object.destino }}</h4>
-        <p class="de">De: R$ {{ object.preco_de }}</p>
-        <p class="desconto">Desconto: {{ object.desconto }}%</p>
-        <p class="final">Preço final:</p>
-        <p class="por"> R$ <span class="preco">{{ i.preco }}</span></p>
-        <p>Em até 18 vezes!</p>
-        <p>A incluir taxas e encargos</p>
+        <h4><i class="sprite mini-marker-black pull-left"></i> {{ object.destino }}</h4>
+        <p class="de">De: R$ {{ object.preco_de }}<br>
+        <span class="desconto">Desconto: {{ object.desconto }}%</span></p>
+        <p class="final">Preço final: <br>
+        <span class="preco">R$ {{ i.preco }}</span><br>
+        Em até 18 vezes!</p>
+        <p class="taxas">A incluir taxas e encargos</p>
 
         <a href="/comprar/{{ i.pk }}" class="btn btn-primary">
           Compre agora
