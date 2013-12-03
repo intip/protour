@@ -164,7 +164,7 @@
       // valueKey: 'name',
       prefetch: {url:'/pacotes.json', ttl:0},
       {% verbatim %}
-      template: '<p><a href="{{url}}">{{value}}</a></p>',
+      template: '<a href="{{url}}">{{value}}</a>',
       {% endverbatim %}
       engine: Hogan
     });
