@@ -48,8 +48,8 @@
                   <tbody>
                     <tr>
                       <td>R$ {{ preco.preco|localize }}</td>
-                      <td class="taxas">R$ 1232,00</td>
-                      <td><input type="text" name="qtty" class="form-control" id="qtty" value="1"> pacote(s)</td>
+                      <td class="taxas">+R$ {{ preco.taxas|localize }}</td>
+                      <td><input type="text" name="qtty" class="form-control" id="qtty"> pacote(s)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -58,7 +58,7 @@
             <div class="row total">
               <div class="col-md-6 col-md-offset-6">
                 <p>Total a pagar:
-                <span id="total">R$ {{ preco.preco }}</span ></p>
+                <span id="total">R$ </span ></p>
               </div>
             </div>
             <div class="row submit">
@@ -93,15 +93,23 @@
 {% block scripts %}
 {% for preco in object.variacaopreco_set.all|slice:'1' %}
 <script type="text/javascript">
-  $("#qtty").keyup(function() {
+  function set_values() {
     preco  = {{ preco.preco|unlocalize }}
-    qtty   = $(this).val()
-    total  = (qtty * preco).toFixed(2)
+    taxas  = {{ preco.taxas|unlocalize }}
+    qtty   = $("#qtty").val()
+    total  = (qtty * (preco + taxas)).toFixed(2)
     $value = $("#total")
 
     $value.html('R$ ' + total.replace('.', ','))
 
     sync_pague_seguro_form(qtty)
+  }
+
+  $("#qtty").val("1");
+  set_values();
+
+  $("#qtty").keyup(function() {
+    set_values();
   })
 
   function sync_pague_seguro_form(qtty, preco) {

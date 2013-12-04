@@ -8,11 +8,11 @@
   {% endif %}
 {% endblock %}
 {% block body %}
+{% if destino %}
 <h1 class="titulo-pagina">Pacotes em {{ destino.titulo }}</h1>
+{% endif %}
 <div class="row home">
   <div class="col-md-9">
-    {% if destino %}
-    {% endif %}
     {% for pacote in object_list %}
     <div class="row pacote white-box">
       <div class="col-md-12">

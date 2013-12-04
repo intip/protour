@@ -8,6 +8,17 @@
       <h3><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.titulo }}</a></h3>
       <h4><i class="sprite small-marker"></i> {{ pacote.destino }}</h4>
     </div>
+    {% if pacote.aereo or pacote.transfer %}
+      <div class="incluso">
+        {% if pacote.aereo and pacote.transfer %}
+        <p class="aereo-transfer"><i class="sprite aereo-transfer pull-left"></i> Passagem Aérea e Translado</p>
+        {% elif pacote.aereo %}
+        <p class="aereo"><i class="sprite aereo pull-left"></i> Passagem Aérea Inclusa</p>
+        {% elif pacote.transfer %}
+        <p class="transfer"><i class="sprite transfer pull-left"></i> Translado Incluso</p>
+        {% endif %}
+      </div>
+    {% endif %}
   </div>
   {% endif %}
 </div>
@@ -25,12 +36,16 @@
       </div>
     </div>
     <div class="row">
+      {% if  pacote.pessoas %}
       <div class="col-md-6 col-sm-6 col-xs-6">
-        <i class="icon carinha pull-left"></i> 2 pessoas
+        <i class="icon carinha pull-left"></i> {{ pacote.pessoas }} pessoa(s)
       </div>
+      {% endif %}
+      {% if pacote.diarias %}
       <div class="col-md-6 col-sm-6 col-xs-6">
-        <i class="icon solzinho pull-left"></i> 5 diárias
+        <i class="icon solzinho pull-left"></i> {{ pacote.diarias }} diária(s)
       </div>
+      {% endif %}
     </div>
     {% endif %}
   </div>
