@@ -1,7 +1,8 @@
 Django==1.5.5
 Fabric==1.5.0
-FeinCMS==1.6.2
-Pillow==2.2.1
+FeinCMS==1.7.4
+Pillow==2.0.0
+Pygments==1.6
 South==0.7.6
 Unidecode==0.04.13
 Unipath==1.0
@@ -12,8 +13,7 @@ dj-database-url==0.2.1
 django-appconf==0.6
 django-apptemplates==0.0.1
 django-bootstrap-toolkit==2.5.11
--e git://github.com/mauler/django-ckeditor.git@537d0597f3a9bc1dd552b84c9a0cf383e12d8742#egg=django_ckeditor-dev
--e git://github.com/mauler/django-ckeditor.git@537d0597f3a9bc1dd552b84c9a0cf383e12d8742#egg=django_ckeditor_updated-dev
+django-ckeditor==4.0.2
 django-classy-tags==0.4
 django-compressor==1.3
 django-coverage==1.2.4
@@ -29,16 +29,17 @@ django-jsonfield==0.9.4
 -e git://github.com/mauler/django-jsonit.git@c810273a7154e34adccd3bb31d9674dcc12ed9a9#egg=django_jsonit-dev
 django-less==0.7.2
 django-localflavor==1.0
-django-mptt==0.6.0
+django-mptt==0.5.5
 django-nose==1.2
 django-pdb==0.3.2
 django-post-office==0.3.1
 django-taggit==0.10a1
-django-tinymce==1.5.1
+django-tinymce==1.5.2
 django-uuidfield==0.4.0
 django-xhtml2pdf==0.0.3
 djangorestframework==2.3.8
-easy-thumbnails==1.4
+easy-thumbnails==1.2
+ecdsa==0.10
 gunicorn==0.16.1
 html5lib==1.0b3
 httplib2==0.8
@@ -47,14 +48,16 @@ ipython==1.1.0
 mock==1.0.1
 model-mommy==1.1
 nose==1.3.0
-nscms==0.5.2
-paramiko==1.10.1
+nscms==0.5.4
+paramiko==1.12.0
 paypalrestsdk==0.6.3
 psycopg2==2.5
+pudb==2013.5
 pyPdf==1.13
 pycrypto==2.6
 pygeoip==0.2.5
 python-dateutil==2.1
+pytz==2013.8
 reportlab==2.7
 requests==1.1.0
 selenium==2.37.2
@@ -63,6 +66,7 @@ six==1.4.1
 splinter==0.5.4
 sqlparse==0.1.9
 unittest2==0.5.1
+urwid==1.1.1
 wsgiref==0.1.2
 xhtml2pdf==0.0.5
 xmldict==0.4.1
