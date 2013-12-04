@@ -95,9 +95,18 @@
       </div>
       <div class="container mid">
         {% if fiber_page.title %}
-        <h1>{{ fiber_page.title }}</h1>
+        <h1 class="titulo-pagina">{{ fiber_page.title }}</h1>
         {% endif %}
-        {% show_page_content "content" %}
+        {% if fiber_page.title %}
+          <div class="row">
+            <div class="col-md-9 page-content">
+              <div class="white-well">
+                {% show_page_content "content" %}
+              </div>
+            </div>
+            {% include "includes/sidebar.html" %}
+          </div>
+        {% endif %}
         {% block body %}
         {% endblock %}
       </div>
@@ -218,7 +227,6 @@
         });
       }
     </script>
-    <script src="{{ STATIC_URL}}js/jquery.sticky-kit.min.js"></script>
     {% block scripts %}{% endblock %}
   </body>
 </html>

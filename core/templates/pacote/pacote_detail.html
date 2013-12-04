@@ -112,7 +112,7 @@
       </div>
       {% endif %}
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 sidebar">
       <div class="well comprar">
       {% for variacao in object.get_variacoes|slice:"0:1" %}
         {% for i in variacao.variacaopreco_set.all|slice:":1" %}
