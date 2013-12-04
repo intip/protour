@@ -1,0 +1,82 @@
+.sprite {
+    background: url('../imgs/sprite.png') no-repeat 0 0;
+    display: inline-block;
+
+    &.big-marker {
+        width: 45px;
+        height: 60px;
+    }
+
+    &.small-marker {
+        background-position: -56px 0px;
+        width: 9px;
+        height: 14px;
+        margin-right: 4px;
+    }
+
+    &.chevron-left {
+        background-position: -134px -2px;
+        width: 10px;
+        height: 17px;
+    }
+
+    &.chevron-right {
+        background-position: -160px -2px;
+        width: 10px;
+        height: 17px;
+    }
+
+    &.sm-marker-black {
+        background-position: -198px -11px;
+        width: 14px;
+        height: 18px;
+    }
+
+    &.mini-marker-black {
+        background-position: -224px -14px;
+        width: 9px;
+        height: 13px;
+        margin: 2px 6px 0 4px;
+    }
+
+    &.pagseguro {
+        background-position: -250px -4px;
+        width: 146px;
+        height: 62px
+    }
+
+    .at-icon() {
+        margin-right: 15px;
+        height:26px;
+    }
+
+    &.aereo {
+        background-position: -3px -82px;
+        width: 26px;
+        .at-icon;
+    }
+
+    &.transfer {
+        background-position: -63px -84px;
+        width: 31px;
+        .at-icon;
+    }
+
+    &.aereo-transfer {
+        background-position: -3px -82px;
+        width: 91px;
+        .at-icon;
+    }
+}
+
+.icon {
+    .sprite;
+    width: 26px;
+    height: 28px;
+    &.carinha {
+        background-position: -72px -4px;
+    }
+    &.solzinho {
+        background-position: -109px -5px;
+    }
+}
