@@ -56,20 +56,20 @@ class ProtourFeatureTest(LiveServerTestCase):
         self.browser.visit(self.live_server_url + self.index_page)
         assert self.browser.find_link_by_text(self.tour.destino)
 
-    def test_comprar_page(self):
-        """
-        Buy page should show the pacotes's value
-        """
-        self.browser.visit(self.live_server_url + self.cart_page)
-        preco_esperado = "R$ %.2f" % (self.tour.preco_por, )
-        preco_esperado = preco_esperado.replace('.', ',')
-        self.assertEqual(
-            preco_esperado,
-            self.browser.find_by_css('h4')[0].text)
+    # def test_comprar_page(self):
+    #     """
+    #     Buy page should show the pacotes's value
+    #     """
+    #     self.browser.visit(self.live_server_url + self.cart_page)
+    #     preco_esperado = "R$ %.2f" % (self.tour.preco_por, )
+    #     preco_esperado = preco_esperado.replace('.', ',')
+    #     self.assertEqual(
+    #         preco_esperado,
+    #         self.browser.find_by_css('h4')[0].text)
 
-    def test_qtde_comprar_page(self):
-        """
-        Should see qtty = 1 when click to buy a pacote's
-        """
-        self.browser.visit(self.live_server_url + self.cart_page)
-        self.assertEqual("1", self.browser.find_by_name('qtty')[0].value)
+    # def test_qtde_comprar_page(self):
+    #     """
+    #     Should see qtty = 1 when click to buy a pacote's
+    #     """
+    #     self.browser.visit(self.live_server_url + self.cart_page)
+    #     self.assertEqual("1", self.browser.find_by_name('qtty')[0].value)
