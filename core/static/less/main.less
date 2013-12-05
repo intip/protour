@@ -232,6 +232,14 @@ h1, h2, h3, h4, h5, h6 {
 
     .menu {
         padding: 0 20px;
+        p {
+            margin: 0;
+        }
+        &.horizontal li {
+            display: block;
+            width: 33.33333333333333%;
+            float:left;
+        }
     }
 
     h3 {
@@ -300,6 +308,30 @@ h1, h2, h3, h4, h5, h6 {
         }
         p {
             font-size: 16px;
+        }
+    }
+
+    .variacao {
+        padding: 0;
+        border-top: 2px solid #e3e3e3;
+
+        h3 {
+            font-weight: 400;
+            color: @brand-primary;
+            margin-top: 10px;
+        }
+
+        .valor {
+            color: @brand-success;
+            font-weight: 700;
+            text-align: center;
+            p {
+                font-size: 26px;
+            }
+            .btn {
+                font-weight: 700;
+                font-size: 26px;
+            }
         }
     }
 
@@ -449,6 +481,7 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 20px;
         font-weight: 700;
         .grey-bot();
+        margin-bottom: 10px;
         text-align: center;
         thead {
             background-color: #e5e5e5;
@@ -468,8 +501,14 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .total {
-        .grey-bot();
+        padding: 0 15px;
         text-align: right;
+        .grey-bot {
+            .grey-bot();
+            .col-md-6 {
+                padding: 0;
+            }
+        }
         p {
             font-size: 20px;
             font-weight: 700;
@@ -517,6 +556,10 @@ h1, h2, h3, h4, h5, h6 {
 
 #df-wpr-sidebar {
     z-index: 100900 !important;
+}
+
+ul.ui-context-menu {
+    z-index: 101000 !important;
 }
 
 // } Fiber

@@ -2,8 +2,9 @@
 <div class="row">
   {% if pacote.imagem %}
   <div class="imagem-pacote">
-    <a href="{% url 'core:detalhes' slug=pacote.slug %}"><img class="img-responsive" src="{% thumbnail pacote.imagem 848x250 crop %}"></a>
+    <a href="{% url 'core:detalhes' slug=pacote.slug %}"><img class="img-responsive" src="{% thumbnail pacote.imagem 848x250 crop %}">
     <div class="overlay"></div>
+    </a>
     <div class="titulo-local hidden-xs">
       <h3><a href="{% url 'core:detalhes' slug=pacote.slug %}">{{ pacote.titulo }}</a></h3>
       <h4><i class="sprite small-marker"></i> {{ pacote.destino }}</h4>

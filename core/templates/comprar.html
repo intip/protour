@@ -4,7 +4,8 @@
   <!-- Declaração do formulário -->
   {% for preco in object.variacaopreco_set.all|slice:'1' %}
   <form  method="post"
-   action="https://pagseguro.uol.com.br/v2/checkout/payment.html">
+   action="https://pagseguro.uol.com.br/v2/checkout/payment.html"
+   class="checkout" target="pagseguro">
 
     <!-- Campos obrigatórios -->
     <input type="hidden" name="receiverEmail" value="raphapassini@gmail.com">
@@ -12,7 +13,7 @@
 
     <!-- Itens do pagamento (ao menos um item é obrigatório) -->
     <input type="hidden" name="itemId1" value="{{object.pk}}">
-    <input type="hidden" name="itemDescription1" value="{{object.titulo}}">
+    <input type="hidden" name="itemDescription1" value="{{ object.titulo }}">
     <input type="hidden" name="itemAmount1" value="{{ preco.preco|unlocalize }}">
     <input type="hidden" name="itemQuantity1" value="1">
     <input type="hidden" name="itemWeight1" value="0">
@@ -20,9 +21,9 @@
     <!-- Código de referência do pagamento no seu sistema (opcional) -->
     <input type="hidden" name="reference" value="{{object.pk}}">
 
-    <div class="row checkout">
+    <h2 class="title">Sua compra:</h2>
+    <div class="row">
       <div class="col-md-9">
-        <h2 class="title">Sua compra:</h2>
         <div class="white-well">
           <div class="row pacote">
             <div class="col-md-12">
@@ -34,6 +35,7 @@
             </div>
           </div>
           <h2 class="variacao">Opção escolhida: {{ object.titulo }}</h2>
+          {{ object.regras|safe }}
           <form action="">
             <div class="row">
               <div class="col-md-12">
@@ -56,9 +58,13 @@
               </div>
             </div>
             <div class="row total">
-              <div class="col-md-6 col-md-offset-6">
-                <p>Total a pagar:
-                <span id="total">R$ </span ></p>
+              <div class="col-md-12">
+                <div class="row grey-bot">
+                  <div class="col-md-6 col-md-offset-6">
+                    <p>Total a pagar:
+                    <span id="total">R$ </span ></p>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="row submit">
@@ -102,7 +108,7 @@
 
     $value.html('R$ ' + total.replace('.', ','))
 
-    sync_pague_seguro_form(qtty)
+    sync_pague_seguro_form(qtty, preco + taxas)
   }
 
   $("#qtty").val("1");
@@ -114,6 +120,7 @@
 
   function sync_pague_seguro_form(qtty, preco) {
     $("input[name='itemQuantity1']").val(qtty);
+    $("input[name='itemAmount1']").val(preco.toFixed(2));
   }
 
 </script>

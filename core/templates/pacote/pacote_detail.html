@@ -69,27 +69,30 @@
         </div>
       </div>
       {% endif %}
-      <div class="well">
-        <div class="row">
-          <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="well">
             <h2>Opções para você:</h2>
+            {% for variacao in object.get_variacoes %}
+            <div class="col-md-12 variacao">
+              <div class="row">
+                <div class="col-md-9">
+                  <h3>{{ variacao.titulo }}</h3>
+                  <div>{{ variacao.regras|safe }}</div>
+                </div>
+                {% for i in variacao.variacaopreco_set.all %}
+                <div class="col-md-3 valor">
+                  <p>R$ {{ i.preco }}</p>
+                  <a href="/comprar/{{ variacao.pk }}" class="btn btn-primary">
+                    Comprar
+                  </a>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
           </div>
         </div>
-        {% for variacao in object.get_variacoes %}
-        <div class="row variacao">
-          <div class="col-md-9">
-            {{ variacao.titulo }}
-          </div>
-          {% for i in variacao.variacaopreco_set.all %}
-          <div class="col-md-3">
-            <p>R$ {{ i.preco }}</p>
-            <a href="/comprar/{{ i.pk }}" class="btn btn-primary">
-              Comprar
-            </a>
-          </div>
-          {% endfor %}
-        </div>
-        {% endfor %}
       </div>
       {% if object.regulamento %}
       <div class="row">
