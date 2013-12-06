@@ -43,18 +43,6 @@ Idéias e roadmap. Contribuam entrando cards no inbox, comentando e votando os o
 
 ## Roadmap
 
-### Pré-validação
-
-HTML navegável da home e detalhes do pacote.
-
-### Alpha
-
-Listagem dos podrutos cadastrados usando o business e contato por e-mail.
-
-### Beta
-
-Compra realizada.
-
 ### Versão 1.0
 
 Domínio mundial.
