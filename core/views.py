@@ -50,10 +50,13 @@ class TypeAheadView(View):
         pacotes = []
         for pacote in self.queryset:
             url = r("core:detalhes", args=[pacote.slug])
+            tokens = pacote.titulo.split()
+            tokens += pacote.destino.titulo.split()
+            tokens = list(set(tokens))
             datum = {
                 "value": pacote.titulo,
                 "url": url,
-                "tokens": [pacote.titulo]
+                "tokens": tokens
             }
             pacotes.append(datum)
         response = json.dumps(pacotes)
