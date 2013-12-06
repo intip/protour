@@ -19,6 +19,46 @@
     background-color: #FFF;
     .border-radius();
     .box-shadow(0; 0; 8px; rgba(100,100,100,.15));
+    font-size: 16px;
+
+    ol {
+        counter-reset:li;
+        > li {
+            list-style: none;
+            margin: 25px 0;
+            position: relative;
+            padding-left: 15px;
+        }
+        > li:before {
+            background-color: @brand-primary;
+            .border-radius();
+            color: #FFF;
+            content: counter(li);
+            counter-increment: li;
+            font-size: 18px;
+            font-weight: 700;
+            left: -40px;
+            padding: 5px 0;
+            position: absolute;
+            text-align: center;
+            top: -8px;
+            width: 38px;
+        }
+    }
+
+    h2 {
+        color: @brand-success;
+        font-weight: 400;
+        font-size: 32px;
+        margin-top: 0;
+    }
+
+    h3 {
+        font-weight: 400;
+        color: @brand-primary;
+        margin-top: 10px;
+    }
+
 }
 
 .grey-bot {
@@ -303,26 +343,14 @@ h1, h2, h3, h4, h5, h6 {
     .well {
         .white-well;
         padding: 12px 15px;
-        h2 {
-            color: @brand-success;
-            font-weight: 400;
-            font-size: 32px;
-            margin-top: 0;
-        }
-        p {
-            font-size: 16px;
-        }
+
+        font-size: 16px;
+
     }
 
     .variacao {
         padding: 0;
         border-top: 2px solid #e3e3e3;
-
-        h3 {
-            font-weight: 400;
-            color: @brand-primary;
-            margin-top: 10px;
-        }
 
         .valor {
             color: @brand-success;
@@ -334,6 +362,24 @@ h1, h2, h3, h4, h5, h6 {
             .btn {
                 font-weight: 700;
                 font-size: 26px;
+            }
+        }
+    }
+    .recomendacoes ul {
+        li {
+            list-style: none;
+            margin: 25px 0;
+            padding-left: 15px;
+            position: relative;
+            &:before {
+                .sprite();
+                background-position: -408px -7px;
+                content: ' ';
+                height: 28px;
+                left: -30px;
+                position: absolute;
+                top: -6px;
+                width: 26px;
             }
         }
     }

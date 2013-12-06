@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
-{% block title %}{{ empresa.nome }} - {{ object.titulo }}{% endblock %}
+{% block title %}{% if object.page_title %}{{ object.page_title }}{% else %}{{ object.titulo }}{% endif %} - {{ empresa.nome }}{% endblock %}
+{% block description %}{{ object.description }}{% endblock %}
 {% block body %}
   <div class="row detalhes-pacote">
     <div class="col-md-9">
@@ -107,7 +108,7 @@
       {% if object.recomendacoes %}
       <div class="row">
         <div class="col-md-12">
-          <div class="well">
+          <div class="well recomendacoes">
             <h2>Recomendações</h2>
             {{ object.recomendacoes|safe }}
           </div>
