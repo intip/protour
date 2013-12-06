@@ -5,9 +5,10 @@ import json
 from django.core.urlresolvers import reverse as r
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, View
+from django.views.generic import ListView, View, TemplateView
 from django.views.generic.detail import DetailView
 
+import watson
 
 from configuracao.models import FormaPagamento
 from destino.models import Destino
@@ -74,3 +75,18 @@ class TypeAheadView(View):
             pacotes.append(datum)
         response = json.dumps(pacotes)
         return self.response_class(response, **response_kwargs)
+
+
+class SearchView(TemplateView):
+    """
+    """
+    template_name = "index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(SearchView, self).get_context_data(**kwargs)
+        kwargs = self.request.GET
+        query = kwargs.get("q", "")
+        pacotes = watson.search(query)
+        context["object_list"] = [i.object for i in pacotes]
+        context["query"] = query
+        return context

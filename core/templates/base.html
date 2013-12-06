@@ -72,8 +72,11 @@
             <div class="row hidden-sm hidden-xs">
               <div class="col-md-8">
                 <div class="form-group">
-                  <input type="text" class="pacote-search form-control" placeholder="Para onde você deseja ir?">
-                  <div class="help-text">{% show_content "Busca Ajuda" %}</div>
+                  <form action="/busca/">
+                    <input type="text" data-provide="typeahead" class="pacote-search form-control" placeholder="Para onde você deseja ir?" name="q">
+                    <button type="submit" class="btn btn-primary buscar">Buscar</button>
+                    <div class="help-text">{% show_content "Busca Ajuda" %}</div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -175,28 +178,31 @@
     $('input.pacote-search').typeahead({
       name: 'pacotes',
       // valueKey: 'name',
-      prefetch: {url:'/pacotes.json', ttl:0},
+      prefetch: {
+        url:'/pacotes.json', ttl:0
+      },
       {% verbatim %}
       template: '<a href="{{url}}">{{value}}</a>',
       {% endverbatim %}
-      engine: Hogan
+      engine: Hogan,
+      footer: '<button type="submit" class="btn btn-primary more">+ Veja mais resultados</button>',
     });
     </script>
     <!-- AddThis Smart Layers BEGIN -->
-<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5294b7c652fe15c3"></script>
-<script type="text/javascript">
-  addthis.layers({
-    'theme' : 'transparent',
-    'share' : {
-      'position' : 'left',
-      'numPreferredServices' : 5
-    },
-    'whatsnext' : {},
-    'recommended' : {}
-  });
-</script>
-<!-- AddThis Smart Layers END -->
+    <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5294b7c652fe15c3"></script>
+    <script type="text/javascript">
+      addthis.layers({
+        'theme' : 'transparent',
+        'share' : {
+          'position' : 'left',
+          'numPreferredServices' : 5
+        },
+        'whatsnext' : {},
+        'recommended' : {}
+      });
+    </script>
+    <!-- AddThis Smart Layers END -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

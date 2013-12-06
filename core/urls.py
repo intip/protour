@@ -5,7 +5,8 @@ from django.views.generic.detail import DetailView
 
 from pacote.models import Pacote
 
-from core.views import HomePageView, DestinoView, TypeAheadView, ComprarView
+from core.views import HomePageView, DestinoView, TypeAheadView, ComprarView,\
+    SearchView
 
 
 urlpatterns = patterns(
@@ -22,4 +23,5 @@ urlpatterns = patterns(
     url(r'^pacotes\.json$',
         TypeAheadView.as_view(),
         name='typejson'),
+    url(r'^busca/$', SearchView.as_view(), name="search"),
 )

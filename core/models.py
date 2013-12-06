@@ -2,7 +2,9 @@
 
 # Core Django imports
 from django.db import models
-from django.utils.translation import ugettext as _
+from pacote.models import Pacote
+
+import watson
 
 
 class TimeStampedModel(models.Model):
@@ -18,3 +20,5 @@ class TimeStampedModel(models.Model):
     class Meta:
         abstract = True
 
+
+watson.register(Pacote)

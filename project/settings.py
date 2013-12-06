@@ -150,6 +150,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'fiber',
     'django_coverage',
+    'watson',
 
 ] + INSTALLED_APPS
 
