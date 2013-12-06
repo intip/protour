@@ -8,10 +8,10 @@ from grappelli_navbar.nodes import CLNode
 
 class Navbar(object):
     nodes = (
-        (u'Vendas', {'nodes': (
-            CLNode('pedido', 'pedido'),
-            CLNode('cliente', 'cliente'),
-        )}),
+        # (u'Vendas', {'nodes': (
+        #     CLNode('pedido', 'pedido'),
+        #     CLNode('cliente', 'cliente'),
+        # )}),
         (u'Inventários', {'nodes': (
             CLNode('pacote', 'pacote'),
         )}),
