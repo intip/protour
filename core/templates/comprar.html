@@ -11,12 +11,12 @@
    class="checkout" target="pagseguro">
 
     <!-- Campos obrigatórios -->
-    <input type="hidden" name="receiverEmail" value="raphapassini@gmail.com">
+    <input type="hidden" name="receiverEmail" value="{{ pagamento.pagseguro_email }}">
     <input type="hidden" name="currency" value="BRL">
 
     <!-- Itens do pagamento (ao menos um item é obrigatório) -->
     <input type="hidden" name="itemId1" value="{{object.pk}}">
-    <input type="hidden" name="itemDescription1" value="{{ object.titulo }}">
+    <input type="hidden" name="itemDescription1" value="{{ object.pacote.titulo }} - {{ object.titulo }}">
     <input type="hidden" name="itemAmount1" value="{{ preco.preco|unlocalize }}">
     <input type="hidden" name="itemQuantity1" value="1">
     <input type="hidden" name="itemWeight1" value="0">

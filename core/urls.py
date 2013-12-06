@@ -3,16 +3,16 @@
 from django.conf.urls import patterns, url
 from django.views.generic.detail import DetailView
 
-from pacote.models import Pacote, Variacao
+from pacote.models import Pacote
 
-from core.views import HomePageView, DestinoView, TypeAheadView
+from core.views import HomePageView, DestinoView, TypeAheadView, ComprarView
 
 
 urlpatterns = patterns(
     'core.views',
     url(r'^$', HomePageView.as_view(), name='homepage'),
     url(r'^comprar/(?P<pk>\d+)/$',
-        DetailView.as_view(model=Variacao, template_name="comprar.html"),
+        ComprarView.as_view(),
         name='comprar'),
     url(r'^pacote/(?P<slug>[\w_-]+)/$', DetailView.as_view(
         model=Pacote), name='detalhes'),

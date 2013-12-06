@@ -6,9 +6,12 @@ from django.core.urlresolvers import reverse as r
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, View
+from django.views.generic.detail import DetailView
 
+
+from configuracao.models import FormaPagamento
 from destino.models import Destino
-from pacote.models import Pacote
+from pacote.models import Pacote, Variacao
 
 
 class HomePageView(ListView):
@@ -37,6 +40,16 @@ class DestinoView(ListView):
     def get_context_data(self, **kwargs):
         context = super(DestinoView, self).get_context_data(**kwargs)
         context["destino"] = self.destino
+        return context
+
+
+class ComprarView(DetailView):
+    model = Variacao
+    template_name = "comprar.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(ComprarView, self).get_context_data(**kwargs)
+        context["pagamento"] = FormaPagamento.objects.get_singleton()
         return context
 
 
