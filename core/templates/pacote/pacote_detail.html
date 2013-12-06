@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
 {% block title %}{% if object.page_title %}{{ object.page_title }}{% else %}{{ object.titulo }}{% endif %} - {{ empresa.nome }}{% endblock %}
-{% block description %}{{ object.description }}{% endblock %}
+{% block description %}
+  {% if object.description %}
+    {{ object.description }}
+  {% else %}
+    {{ empresa.nome }}: {{ object.titulo }} - {{ object.destino }}. R$ {{ object.preco_por }}!!
+  {% endif %}
+{% endblock %}
 {% block body %}
   <div class="row detalhes-pacote">
     <div class="col-md-9">

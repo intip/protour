@@ -6,8 +6,26 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% block title %}{{ empresa.nome }}{% if fiber_page.title %} - {{ fiber_page.title }} {% endif %}{% endblock %}</title>
-    <meta name="description" content="{% block description %}{% endblock %}">
+    <title>
+      {% block title %}
+        {% if fiber_page.doc_title %}
+          {{ fiber_page.doc_title }} -
+        {% elif fiber_page.title %}
+          {{ fiber_page.title }} -
+        {% endif %}
+        {{ empresa.nome }}
+      {% endblock %}
+    </title>
+    <meta name="description" content="
+      {% block description %}
+        {% if fiber_page.meta_description %}
+          {{ fiber_page.meta_description }}
+        {% elif destino %}
+          Veja os pacotes promocionais em {{ destino }} - {{ empresa.nome }}
+        {% else %}
+          {{ empresa.nome }} - Pacotes turísticos promocionais em todo o Brasil!
+        {% endif %}
+      {% endblock %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -124,7 +142,7 @@
             <div class="col-md-3">
               <div class="menu">
                 <h3>{% show_content "Título Menu 3" %}</h3>
-                {% show_menu "Menu 3" 1 1 "all" %}
+                {% show_content "Siga_nos" %}
               </div>
             </div>
           </div>
@@ -138,7 +156,7 @@
               </div>
             </div>
             <div class="col-md-7 col-md-offset-2">
-              <p class="copyright">© Copyright 2010/2013 Massa Viagens . Todos os direitos reservados.</p>
+              <div class="copyright">{% show_content "Copyright" %}</div>
             </div>
           </div>
         </div>
