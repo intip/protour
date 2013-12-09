@@ -73,7 +73,7 @@
               <div class="col-md-8">
                 <div class="form-group">
                   <form action="/busca/">
-                    <input type="text" data-provide="typeahead" class="pacote-search form-control" placeholder="Para onde você deseja ir?" name="q">
+                    <input type="text" data-provide="typeahead" class="pacote-search form-control" placeholder="Para onde você deseja ir?" name="q" required>
                     <button type="submit" class="btn btn-primary buscar">Buscar</button>
                     <div class="help-text">{% show_content "Busca Ajuda" %}</div>
                   </form>
@@ -199,7 +199,6 @@
           'numPreferredServices' : 5
         },
         'whatsnext' : {},
-        'recommended' : {}
       });
     </script>
     <!-- AddThis Smart Layers END -->

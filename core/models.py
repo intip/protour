@@ -21,4 +21,4 @@ class TimeStampedModel(models.Model):
         abstract = True
 
 
-watson.register(Pacote)
+watson.register(Pacote.objects.filter(publicado=True))
