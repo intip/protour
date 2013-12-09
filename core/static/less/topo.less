@@ -147,7 +147,6 @@
 }
 // } Typeahead
 
-
 // Navegação Principal {
 .main-nav {
     padding-top: 25px;
@@ -156,15 +155,28 @@
         border-color: @brand-primary;
         margin-bottom: 30px;
         margin-top: 5px;
-        .navbar-nav > li > a {
+        ul {
+            list-style: none;
+            float: left;
+            margin: 0;
+            padding-left: 0;
+        }
+        ul > li > a {
             font-weight: 700;
             font-size: 18px;
             color: #FFF;
             margin: 0;
             display: inline;
+            padding: 10px 15px;
+            &:hover {
+                text-decoration: none;
+            }
         }
         li {
             padding: 20px 0;
+            float: left;
+            position: relative;
+            display: block;
         }
         li+li:before {
             content: " ";
