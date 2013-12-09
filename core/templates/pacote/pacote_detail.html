@@ -90,7 +90,7 @@
                 {% for i in variacao.variacaopreco_set.all %}
                 <div class="col-md-3 col-md-3 valor">
                   <p>R$ {{ i.preco }}</p>
-                  <a href="/comprar/{{ variacao.pk }}" class="btn btn-primary">
+                  <a href="{% url 'core:comprar' variacao.pk %}" class="btn btn-primary">
                     Comprar
                   </a>
                 </div>
@@ -135,7 +135,7 @@
         Em até 18 vezes!</p>
         <p class="taxas">A incluir taxas e encargos</p>
 
-        <a href="/comprar/{{ i.pk }}" class="btn btn-primary">
+        <a href="{% url 'core:comprar' variacao.pk %}" class="btn btn-primary">
           Compre agora!
         </a>
         {% endfor %}
