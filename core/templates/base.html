@@ -41,14 +41,14 @@
     <!-- Add your site or application content here -->
     <div class="container top">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-4">
           {% if empresa.logo %}
           <a href="/">
             <img class="img-responsive" alt="{{ empresa.nome }}" title="{{ empresa.nome }}" src="{{ empresa.logo.url }}">
           </a>
           {% endif %}
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 col-sm-8">
           <div class="pull-right">
             {% show_menu "Menu Topo" 1 1 %}
           </div>
@@ -130,19 +130,19 @@
       <div class="bot">
         <div class="container">
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 col-sm-4 col-xs-4">
               <div class="menu">
                 <h3>{% show_content "Título Menu 1" %}</h3>
                 {% show_menu "Menu 1" 1 1 "all" %}
               </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-7 col-sm-8 col-xs-8">
               <div class="menu horizontal">
                 <h3>{% show_content "Título Menu 2" %}</h3>
                 {% show_menu "Menu 2" 1 1 "all" %}
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 hidden-sm hidden-xs">
               <div class="menu">
                 <h3>{% show_content "Título Menu 3" %}</h3>
                 {% show_content "Siga_nos" %}
@@ -152,13 +152,13 @@
         </div>
         <div class="faixa">
           <div class="container">
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-4 hidden-xs">
               <div class="title">
                 <i class="sprite big-marker pull-right"></i>
                 {% show_content "Título Rodapé" %}
               </div>
             </div>
-            <div class="col-md-7 col-md-offset-2">
+            <div class="col-md-7 col-md-offset-2 col-sm-7 col-sm-offset-1">
               <div class="copyright">{% show_content "Copyright" %}</div>
             </div>
           </div>
