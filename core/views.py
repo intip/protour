@@ -23,6 +23,7 @@ class HomePageView(ListView):
     qs = Pacote.objects.filter(destaque=True).filter(publicado=True)
     qs = qs.order_by("data_publicacao")
     queryset = qs
+    paginate_by = "10"
 
 
 class DestinoView(ListView):
@@ -30,6 +31,7 @@ class DestinoView(ListView):
     View for the destino's list.
     """
     template_name = "index.html"
+    paginate_by = "10"
 
     def get_queryset(self):
         slug = self.kwargs["slug"]

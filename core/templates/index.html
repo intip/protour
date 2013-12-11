@@ -27,6 +27,25 @@
       </div>
     </div>
     {% endfor %}
+    {% if is_paginated %}
+    <div class="row">
+      <div class="col-md-12 paginacao">
+        <ul class="pagination pagination-lg">
+          <li class="{% if not page_obj.has_previous %}disabled{% endif %}">
+            <a href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% else %}#{% endif %}">Anterior</a>
+          </li>
+          {% for page in page_obj.paginator.page_range %}
+            <li class="{% if page == page_obj.number %}active{% endif %}">
+              <a href="?page={{ page}}">{{ page }}</a>
+            </li>
+          {% endfor %}
+          <li class="{% if not page_obj.has_next %}disabled{% endif %}">
+            <a href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% else %}#{% endif %}">Próximo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
   </div>
   {% include "includes/sidebar.html" %}
 </div>
