@@ -15,6 +15,7 @@
         <div class="col-md-12">
           <h1 class="titulo-pacote">{{ object.titulo }}</h1>
           <h2 class="destino"><i class="sprite sm-marker-black"></i> {{ object.destino }}</h2>
+          <div class="fb-like" data-layout="standard" data-action="like" data-share="true"></div>
         </div>
       </div>
       {% if object.imagem_set.all %}
@@ -66,16 +67,108 @@
           </div>
         </div>
       </div>
-      {% if object.incluso %}
       <div class="row">
         <div class="col-md-12">
-          <div class="well">
+          <div class="well incluso">
             <h2>Incluso no pacote:</h2>
+            <div class="row">
+              <ul class="itens-inclusos">
+                {% if object.pessoas %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse pessoas"></i> <strong>{{ object.pessoas }} Pessoas</strong></p>
+                </li>
+                {% endif %}
+                {% if object.diarias %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse diarias"></i> <strong>{{ object.diarias }} Diárias</strong></p>
+                </li>
+                {% endif %}
+                {% if object.aereo %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse aereo"></i> <strong>Vôo de ida e volta</strong></p>
+                </li>
+                {% endif %}
+                {% if object.transfer %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse transfer"></i> <strong>Transfer</strong></p>
+                </li>
+                {% endif %}
+                {% if object.room_service %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse room_service"></i> Serviço de quarto</p>
+                </li>
+                {% endif %}
+                {% if object.casino %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse casino"></i> Cassino</p>
+                </li>
+                {% endif %}
+                {% if object.cofre %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse cofre"></i> Cofre</p>
+                </li>
+                {% endif %}
+                {% if object.wifi %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse wifi"></i> Wi-fi</p>
+                </li>
+                {% endif %}
+                {% if object.sauna %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse sauna"></i> Sauna</p>
+                </li>
+                {% endif %}
+                {% if object.estacionamento %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse estacionamento"></i> Estacionamento</p>
+                </li>
+                {% endif %}
+                {% if object.piscina %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse piscina"></i> Piscina</p>
+                </li>
+                {% endif %}
+                {% if object.all_incluse %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse all-incluse"></i> All Incluse</p>
+                </li>
+                {% endif %}
+                {% if object.salao_de_jogos %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse salao_de_jogos"></i> Salão de jogos</p>
+                </li>
+                {% endif %}
+                {% if object.acessibilidade %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse acessibilidade"></i> Acessibilidade</p>
+                </li>
+                {% endif %}
+                {% if object.crianca_gratis %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse crianca_gratis"></i> Crianças grátis</p>
+                </li>
+                {% endif %}
+                {% if object.suite %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse suite"></i> Suíte</p>
+                </li>
+                {% endif %}
+                {% if object.area_de_lazer %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse area_de_lazer"></i> Área de lazer</p>
+                </li>
+                {% endif %}
+                {% if object.academia %}
+                <li class="col-md-4 col-sm-6 item">
+                  <p><i class="incluse academia"></i> Academia</p>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
             {{ object.incluso|safe }}
           </div>
         </div>
       </div>
-      {% endif %}
       <div class="row">
         <div class="col-md-12">
           <div class="well">

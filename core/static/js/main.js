@@ -4,7 +4,7 @@ var topPadding = 0;
 
 $(window).scroll(function() {
     var heightColuna = $(".detalhes-pacote").height();
-    var heightWell = $(".sidebar .comprar").height() + 50;
+    var heightWell = $(".sidebar .comprar").height() + 70;
     var max_height = offset.top + heightColuna - heightWell;
 
     if ($(window).scrollTop() > offset.top && $(window).scrollTop() < max_height) {
