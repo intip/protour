@@ -54,7 +54,7 @@
                   <tbody>
                     <tr>
                       <td>R$ {{ preco.preco|localize }}</td>
-                      <td class="taxas">+R$ {{ preco.taxas|localize|default:'0' }}</td>
+                      <td class="taxas">+R$ {{ preco.taxas|default:'0,00'|localize }}</td>
                       <td><input type="text" name="qtty" class="form-control" id="qtty"> pacote(s)</td>
                     </tr>
                   </tbody>
@@ -105,7 +105,7 @@
 <script type="text/javascript">
   function set_values() {
     preco  = {{ preco.preco|unlocalize }}
-    taxas  = {{ preco.taxas|unlocalize }}
+    taxas  = {{ preco.taxas|default:'0,00'|unlocalize }}
     qtty   = $("#qtty").val()
     total  = (qtty * (preco + taxas)).toFixed(2)
     $value = $("#total")
