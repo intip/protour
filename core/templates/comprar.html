@@ -54,7 +54,7 @@
                   <tbody>
                     <tr>
                       <td>R$ {{ preco.preco|localize }}</td>
-                      <td class="taxas">+R$ {{ preco.taxas|localize }}</td>
+                      <td class="taxas">+R$ {{ preco.taxas|localize|default:'0' }}</td>
                       <td><input type="text" name="qtty" class="form-control" id="qtty"> pacote(s)</td>
                     </tr>
                   </tbody>
