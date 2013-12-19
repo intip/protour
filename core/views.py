@@ -80,9 +80,45 @@ class TypeAheadView(View):
     response_class = HttpResponse
 
     def get(self, request, **response_kwargs):
-        self.queryset = Pacote.objects.filter(publicado=True)
-        pacotes = []
-        for pacote in self.queryset:
+        objs = []
+        for destino in Destino.objects.all():
+            url = r("core:destino", args=[destino.slug])
+            datum = {
+                "value": destino.titulo,
+                "url": url,
+                "destino": True,
+            }
+            objs.append(datum)
+
+        for estado in Estado.objects.all():
+            url = r("core:estado", args=[estado.slug])
+            datum = {
+                "value": estado.titulo,
+                "url": url,
+                "estado": True,
+            }
+            objs.append(datum)
+
+        for regiao in Regiao.objects.all():
+            url = r("core:regiao", args=[regiao.slug])
+            datum = {
+                "value": regiao.titulo,
+                "url": url,
+                "regiao": True,
+            }
+            objs.append(datum)
+
+        for pais in Pais.objects.all():
+            url = r("core:pais", args=[pais.slug])
+            datum = {
+                "value": pais.titulo,
+                "url": url,
+                "pais": True,
+            }
+            objs.append(datum)
+
+        queryset = Pacote.objects.filter(publicado=True)
+        for pacote in queryset:
             url = r("core:detalhes", args=[pacote.slug])
             tokens = pacote.titulo.split()
             tokens += pacote.destino.titulo.split()
@@ -92,8 +128,8 @@ class TypeAheadView(View):
                 "url": url,
                 "tokens": tokens
             }
-            pacotes.append(datum)
-        response = json.dumps(pacotes)
+            objs.append(datum)
+        response = json.dumps(objs)
         return self.response_class(response, **response_kwargs)
 
 

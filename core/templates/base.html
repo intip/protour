@@ -178,7 +178,11 @@
         url:'/pacotes.json', ttl:0
       },
       {% verbatim %}
-      template: '<a href="{{url}}">{{value}}</a>',
+      template: '<a href="{{url}}">{{value}}\
+        {{#destino}} <small>(Destino)</small> {{/destino}}\
+        {{#regiao}} <small>(Região)</small> {{/regiao}}\
+        {{#pais}} <small>(País)</small> {{/pais}}\
+        {{#estado}} <small>(Estado)</small> {{/estado}}\</a>',
       {% endverbatim %}
       engine: Hogan,
       footer: '<button type="submit" class="btn btn-primary more">+ Veja mais resultados</button>',
