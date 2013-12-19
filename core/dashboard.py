@@ -22,7 +22,10 @@ class CustomIndexDashboard(Dashboard):
             models=(
                 'pacote.models.Pacote',
                 'destino.models.Destino',
-                'fiber.models.Page'
+                'destino.models.Estado',
+                'destino.models.Regiao',
+                'destino.models.Pais',
+                'fiber.models.Page',
             ),
         ))
 

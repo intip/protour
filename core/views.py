@@ -11,7 +11,7 @@ from django.views.generic.detail import DetailView
 import watson
 
 from configuracao.models import FormaPagamento
-from destino.models import Destino
+from destino.models import Destino, Estado, Regiao, Pais
 from pacote.models import Pacote, Variacao
 
 
@@ -32,11 +32,14 @@ class DestinoView(ListView):
     """
     template_name = "index.html"
     paginate_by = "10"
+    model = Destino
+    field = "destino"
 
     def get_queryset(self):
         slug = self.kwargs["slug"]
-        self.destino = get_object_or_404(Destino, slug=slug)
-        qs = Pacote.objects.filter(publicado=True).filter(destino=self.destino)
+        self.destino = get_object_or_404(self.model, slug=slug)
+        query = {self.field: self.destino}
+        qs = Pacote.objects.filter(publicado=True).filter(**query)
         qs = qs.order_by("data_publicacao")
         return qs
 
@@ -44,6 +47,21 @@ class DestinoView(ListView):
         context = super(DestinoView, self).get_context_data(**kwargs)
         context["destino"] = self.destino
         return context
+
+
+class EstadoView(DestinoView):
+    model = Estado
+    field = "destino__estado"
+
+
+class RegiaoView(DestinoView):
+    model = Regiao
+    field = "destino__estado__regiao"
+
+
+class PaisView(DestinoView):
+    model = Pais
+    field = "destino__pais"
 
 
 class ComprarView(DetailView):
