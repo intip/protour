@@ -17,8 +17,7 @@ script:
   - mkdir media
   - python manage.py syncdb --settings=project.test_settings --noinput
   - python manage.py migrate_business --settings=project.test_settings
-  - coverage run --source=../apps/evento --omit='../apps/*migrations*' test.sh
-  - coverage report -m
+  - bash test.sh
 notifications:
   email:
     recipients:
