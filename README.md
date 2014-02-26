@@ -1,6 +1,6 @@
 # ProTour
 
-[![Build Status](https://drone.io/github.com/intip/protour/status.png)](https://drone.io/github.com/intip/protour/latest)
+[![Build Status](https://magnum.travis-ci.com/intip/protour.png?token=bDsaN3apFLHgnTd7BrUH&branch=master)](https://magnum.travis-ci.com/intip/protour)
 
 Projeto de sites simples de e-commerce de produtos turísticos.
 
