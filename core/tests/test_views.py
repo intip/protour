@@ -149,4 +149,4 @@ class TypeAheadJSONViewTest(TestCase):
         The pacote should be formatted in the JSON.
         """
         pacotes = json.loads(self.resp.content)
-        self.assertEqual(pacotes[0]["value"], self.tour.titulo)
+        self.assertEqual(pacotes[1]["value"], self.tour.titulo)
