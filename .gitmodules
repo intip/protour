@@ -1,3 +1,3 @@
 [submodule "business"]
 	path = business
-        url = git@github.com:intip/business.git
+        url = https://user:password@github.com/organization/repo.git
