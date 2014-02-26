@@ -12,7 +12,7 @@ install:
   - sudo npm install -g less
   - pip install -r project/requirements.txt --use-mirrors
 script:
-  - submodule git init
+  - git submodule init
   - git submodule update
   - python manage.py syncdb --settings=project.test_settings --noinput
   - python manage.py migrate_business --settings=project.test_settings
